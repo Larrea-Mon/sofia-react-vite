@@ -4,7 +4,8 @@
   "homepage": "./",
   "private": true,
   "scripts": {
-    "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='./' react-app-rewired --openssl-legacy-provider build",
+    "analyze": "ANALYZE=true npm run build",
+    "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='./' node --max_old_space_size=8192 ./node_modules/.bin/react-app-rewired --openssl-legacy-provider build",
     "start": "react-app-rewired --openssl-legacy-provider start",
     "test": "react-app-rewired --openssl-legacy-provider test",
     "start:backend": "cross-env REACT_APP_BACKEND=true react-app-rewired --openssl-legacy-provider start"
@@ -12,13 +13,19 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.40",
     "@amcharts/amcharts4-geodata": "^4.1.30",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.27.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@fullcalendar/daygrid": "^6.1.17",
     "@fullcalendar/interaction": "^6.1.17",
     "@fullcalendar/list": "^6.1.17",
     "@fullcalendar/react": "^6.1.17",
     "@fullcalendar/timegrid": "^6.1.17",
+    "@jridgewell/sourcemap-codec": "^1.5.0",
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
+    "@mui/styles": "^6.4.12",
     "@react-google-maps/api": "^2.20.6",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -36,6 +43,7 @@
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "crypto-browserify": "^3.12.1",
+    "eslint-config-react-app": "^7.0.1",
     "eva-icons": "^1.1.3",
     "flatpickr": "4.6.13",
     "font-awesome": "^4.7.0",
@@ -53,12 +61,13 @@
     "process": "^0.11.10",
     "prop-types": "^15.8.1",
     "rc-hammerjs": "^0.6.10",
-    "react": "^19.1.0",
+    "react": "^18.3.1",
     "react-apexcharts": "^1.7.0",
     "react-app-rewired": "^2.2.1",
     "react-big-calendar": "^1.19.2",
+    "react-color": "^2.19.3",
     "react-datepicker": "^8.4.0",
-    "react-dom": "^19.1.0",
+    "react-dom": "^18.3.1",
     "react-dropzone": "^14.3.8",
     "react-flatpickr": "^4.0.10",
     "react-hook-form": "^7.57.0",
@@ -67,6 +76,7 @@
     "react-router": "^7.6.1",
     "react-router-dom": "^7.6.1",
     "react-router-hash-link": "^2.4.3",
+    "react-router-redux": "^4.0.8",
     "react-scripts": "^5.0.1",
     "react-scrollspy": "^3.4.3",
     "react-select": "^5.10.1",
@@ -78,6 +88,7 @@
     "reactstrap": "^9.2.3",
     "recharts": "^2.15.3",
     "redux": "^5.0.1",
+    "redux-first-history": "^5.2.0",
     "redux-thunk": "^3.1.0",
     "sass": "^1.89.1",
     "showdown": "^2.1.0",
@@ -85,9 +96,10 @@
     "stream-http": "^3.2.0",
     "styled-components": "^6.1.18",
     "url": "^0.11.4",
-    "uuid": "^11.1.0",
+    "uuid": "^8.3.2",
     "vm-browserify": "^1.1.2",
     "web-vitals": "^5.0.2",
+    "webpack": "^5.99.9",
     "yup": "^1.6.1"
   },
   "eslintConfig": {
@@ -110,5 +122,8 @@
   },
   "engines": {
     "node": "^20.15"
+  },
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }
