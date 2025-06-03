@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { withRouter, Redirect, Link } from "react-router-dom";
+import { withRouter, Redirect, Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   Container,
@@ -25,6 +25,7 @@ import { registerUser } from "../../../actions/register.js";
 
 const Register = (props) => {
   const [state, setState] = useState({ email: '', password: ''} )
+  const navigate = useNavigate();
 
   const changeCred = (event) => {
     setState({ ...state, [event.target.name]: event.target.value })
@@ -32,10 +33,7 @@ const Register = (props) => {
 
   const doRegister = (event) => {
     event.preventDefault();
-    props.dispatch(registerUser({
-      creds: state,
-      history: props.history,
-    }))
+    props.dispatch(registerUser(state, navigate))
   }
 
   const { from } = props.location.state || { from: { pathname: '/template' } }

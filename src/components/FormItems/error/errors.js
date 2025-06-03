@@ -1,5 +1,4 @@
 import { toast } from 'react-toastify';
-//import { push } from 'connected-react-router';
 
 const DEFAULT_ERROR_MESSAGE = 'Error';
 
@@ -31,14 +30,20 @@ export function setErrorStore(store) {
 }
 
 export default class Errors {
-  static handle(error) {
+  static handle(error, navigate) {
     if (process.env.NODE_ENV !== 'test') {
       console.error(selectErrorMessage(error));
       console.error(error);
     }
 
     if (selectErrorCode(error) === 403) {
-      injectedStore.dispatch(push('/403'));
+      if (navigate) {
+        navigate('/403');
+      } else if (injectedStore) {
+        injectedStore.dispatch({ type: 'NAVIGATE', payload: '/403' });
+      } else {
+        window.location.href = '/403';
+      }
       return;
     }
 
@@ -47,7 +52,13 @@ export default class Errors {
       return;
     }
 
-    store.dispatch(push('/500'));
+    if (navigate) {
+      navigate('/500');
+    } else if (injectedStore) {
+      injectedStore.dispatch({ type: 'NAVIGATE', payload: '/500' });
+    } else {
+      window.location.href = '/500';
+    }
   }
 
   static errorCode(error) {

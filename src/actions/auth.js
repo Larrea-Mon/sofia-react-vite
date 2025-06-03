@@ -71,7 +71,7 @@ export function doInit() {
   }
 }
 
-export function logoutUser() {
+export function logoutUser(navigate) {
   return (dispatch) => {
     dispatch({
       type: LOGOUT_REQUEST,
@@ -82,11 +82,11 @@ export function logoutUser() {
     dispatch({
       type: LOGOUT_SUCCESS,
     });
-    dispatch(push('/login'));
+    navigate('/login');
   };
 }
 
-export function receiveToken(token) {
+export function receiveToken(token, navigate) {
   return (dispatch) => {
     let user;
 
@@ -107,19 +107,19 @@ export function receiveToken(token) {
     dispatch({
       type: LOGIN_SUCCESS
     });
-    dispatch(push('/app'));
+    navigate('/app');
   }
 }
 
-export function loginUser(creds) {
+export function loginUser(creds, navigate) {
   return (dispatch) => {
     // init UI state settings:
     // localStorage.setItem('dashboardTheme', 'dark')
     if (!config.isBackend) {
-      dispatch(receiveToken('token'));
+      dispatch(receiveToken('token', navigate));
       dispatch(doInit());
       // dispatch(push('/app'));
-      dispatch(push('/template'));
+      navigate('/template');
     } else {
       dispatch({
         type: LOGIN_REQUEST,
@@ -129,9 +129,9 @@ export function loginUser(creds) {
       } else if (creds.email.length > 0 && creds.password.length > 0) {
         axios.post("/auth/signin/local", creds).then(res => {
           const token = res.data;
-          dispatch(receiveToken(token));
+          dispatch(receiveToken(token, navigate));
           dispatch(doInit());
-          dispatch(push('/template'));
+          navigate('/template');
         }).catch(err => {
           dispatch(authError(err.response.data));
         })
@@ -142,10 +142,10 @@ export function loginUser(creds) {
   };
 }
 
-export function verifyEmail(token) {
+export function verifyEmail(token, navigate) {
   return(dispatch) => {
     if (!config.isBackend) {
-      dispatch(push('/login'));
+      navigate('/login');
     } else {
       axios.put('/auth/verify-email', {token}).then(verified => {
         if (verified) {
@@ -154,16 +154,16 @@ export function verifyEmail(token) {
       }).catch(err => {
         toast.error(err.response.data);
       }).finally(() => {
-        dispatch(push('/login'));
+        navigate('/login');
       })
     }
   }
 }
 
-export function resetPassword(token, password) {
+export function resetPassword(token, password, navigate) {
   return (dispatch) => {
     if (!config.isBackend) {
-      dispatch(push('/login'));
+      navigate('/login');
     } else {
       dispatch({
         type: RESET_REQUEST,
@@ -173,7 +173,7 @@ export function resetPassword(token, password) {
           type: RESET_SUCCESS,
         });
         toast.success('Password has been updated');
-        dispatch(push('/login'));
+        navigate('/login');
       }).catch(err => {
         dispatch(authError(err.response.data));
       })
@@ -181,10 +181,10 @@ export function resetPassword(token, password) {
   }
 }
 
-export function sendPasswordResetEmail(email) {
+export function sendPasswordResetEmail(email, navigate) {
   return (dispatch) => {
     if (!config.isBackend) {
-      dispatch(push('/login'));
+      navigate('/login');
     } else {
       dispatch({
         type: PASSWORD_RESET_EMAIL_REQUEST,
@@ -194,7 +194,7 @@ export function sendPasswordResetEmail(email) {
           type: PASSWORD_RESET_EMAIL_SUCCESS,
         });
         toast.success('Email with resetting instructions has been sent');
-        dispatch(push('/login'));
+        navigate('/login');
       }).catch(err => {
         dispatch(authError(err.response.data));
       })
@@ -202,10 +202,10 @@ export function sendPasswordResetEmail(email) {
   }
 }
 
-export function registerUser(creds) {
+export function registerUser(creds, navigate) {
   return (dispatch) => {
     if (!config.isBackend) {
-      dispatch(push('/user/profile'));
+      navigate('/user/profile');
     } else {
       dispatch({
         type: REGISTER_REQUEST,
@@ -217,7 +217,7 @@ export function registerUser(creds) {
             type: REGISTER_SUCCESS
           });
           toast.success("You've been registered successfully. Please check your email for verification link");
-          dispatch(push('/user/profile'));
+          navigate('/user/profile');
         }).catch(err => {
           dispatch(authError(err.response.data));
         })

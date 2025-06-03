@@ -24,6 +24,7 @@ import * as Showdown from "showdown";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 //import ColorPicker from 'rc-color-picker';
+import { SketchPicker} from 'react-color'; // <-- updated import
 //import MaskedInput from "react-maskedinput";
 import InputMask from "react-input-mask"; // <-- updated import
 import { useDropzone } from 'react-dropzone';
@@ -35,6 +36,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import Widget from "../../../components/Widget/Widget";
 import s from "./Elements.module.scss";
+import { color } from "highcharts";
 
 export default function Elements() {
 
@@ -429,7 +431,7 @@ export default function Elements() {
                   </Col>
                 </Row>
                 <legend className="mt-5">Colors</legend>
-                {/*<Row> COLORPICKER START
+                <Row> {/* COLORPICKER START */}
                   <Col>
                     <Form>
                       <FormGroup>
@@ -437,15 +439,22 @@ export default function Elements() {
                           Simple select
                           <InputGroup id="colorpicker">
                             <Input
-                              type="text" onChange={(e) => changeColorInput(e)} id="colorpicker"
+                              type="text"
+                              onChange={changeColorInput}
+                              id="colorpicker"
                               value={inputColor}
                             />
                             <InputGroupAddon addonType="append">
-                              <span className="input-group-text">
-                                <ColorPicker
-                                  animation="slide-up"
+                              <span className="input-group-text p-0 border-0 bg-transparent">
+                                <SketchPicker
                                   color={color}
-                                  onChange={changeColorValue}
+                                  onChangeComplete={(c) => {
+                                    setColor(c.hex);
+                                    setInputColor(c.hex);
+                                  }}
+                                  disableAlpha
+                                  presetColors={["#FF5668", "#36cfc9", "#f6e58d", "#7ed6df", "#e17055", "#00b894"]}
+                                  styles={{ default: { picker: { boxShadow: 'none' } } }}
                                 />
                               </span>
                             </InputGroupAddon>
@@ -455,7 +464,7 @@ export default function Elements() {
 
                     </Form>
                   </Col>
-                </Row> COLORPICKER END*/}
+                </Row> {/* COLORPICKER END*/}
               </Widget>
             </Col>
             <Col xs={12} md={6} className="mt-4 mt-md-0">

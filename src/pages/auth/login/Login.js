@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { withRouter, Link, Redirect } from "react-router-dom";
+import { withRouter, Link, Redirect, useNavigate } from "react-router-dom";
 import config from "../../../config";
 import { connect } from "react-redux";
 //import { push } from "connected-react-router";
@@ -31,10 +31,11 @@ const Login = (props) => {
     email: 'admin@flatlogic.com',
     password: 'password',
   })
+  const navigate = useNavigate();
 
   const doLogin = (e) => {
     e.preventDefault();
-    props.dispatch(loginUser({ password: state.password, email: state.email }))
+    props.dispatch(loginUser({ password: state.password, email: state.email }, navigate))
   }
 
   const changeCreds = (event) => {
@@ -45,10 +46,10 @@ const Login = (props) => {
     const params = new URLSearchParams(props.location.search)
     const token = params.get('token');
     if (token) {
-      props.dispatch(receiveToken(token))
+      props.dispatch(receiveToken(token, navigate))
       props.dispatch(doInit())
     }
-  })
+  }, [props.location.search, props, navigate])
 
   return (
     <div className="auth-page">

@@ -1,6 +1,7 @@
 import React from "react";
 import { logoutUser } from "./actions/auth";
 import { Redirect, Route } from "react-router";
+import { useNavigate } from "react-router-dom";
 import hasToken from "./services/authService";
 
 export const AdminRoute = ({ currentUser, dispatch, component, ...rest }) => {
@@ -14,8 +15,9 @@ export const AdminRoute = ({ currentUser, dispatch, component, ...rest }) => {
 };
 
 export const UserRoute = ({ dispatch, component, ...rest }) => {
+  const navigate = useNavigate();
   if (!hasToken()) {
-    dispatch(logoutUser());
+    dispatch(logoutUser(navigate));
     return (<Redirect to="/login"/>)
   } else {
     return (

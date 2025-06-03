@@ -24,6 +24,7 @@ import MenuIcon from "../Icons/HeaderIcons/MenuIcon.js";
 import SearchBarIcon from "../Icons/HeaderIcons/SearchBarIcon.js";
 import BellIcon from "../Icons/HeaderIcons/BellIcon.js";
 import SearchIcon from "../Icons/HeaderIcons/SearchIcon.js";
+import { useNavigate } from "react-router-dom";
 
 import ProfileIcon from "../../assets/navbarMenus/pfofileIcons/ProfileIcon.js";
 import MessagesIcon from "../../assets/navbarMenus/pfofileIcons/MessagesIcon.js";
@@ -43,6 +44,7 @@ import "animate.css";
 const Header = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -53,7 +55,7 @@ const Header = (props) => {
   }
 
   const doLogout = () => {
-    props.dispatch(logoutUser());
+    props.dispatch(logoutUser(navigate));
   }
 
   const toggleSidebar = () => {
