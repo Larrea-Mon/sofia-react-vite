@@ -35,7 +35,7 @@ export const store = createStore(
   compose(
     applyMiddleware(
       routerMiddleware(history),
-      ReduxThunk)
+      thunk)
   )
 );
 

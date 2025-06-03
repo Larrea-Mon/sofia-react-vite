@@ -1,6 +1,5 @@
 import { toast } from 'react-toastify';
 //import { push } from 'connected-react-router';
-import { store } from '../../../index';
 
 const DEFAULT_ERROR_MESSAGE = 'Error';
 
@@ -26,6 +25,11 @@ function selectErrorCode(error) {
   return 500;
 }
 
+let injectedStore = null;
+export function setErrorStore(store) {
+  injectedStore = store;
+}
+
 export default class Errors {
   static handle(error) {
     if (process.env.NODE_ENV !== 'test') {
@@ -34,7 +38,7 @@ export default class Errors {
     }
 
     if (selectErrorCode(error) === 403) {
-      store.dispatch(push('/403'));
+      injectedStore.dispatch(push('/403'));
       return;
     }
 

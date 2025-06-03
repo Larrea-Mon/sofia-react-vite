@@ -2,13 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { Switch, Route, Redirect, HashRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { AdminRoute, UserRoute, AuthRoute } from "./RouteComponents";
+import { AdminRoute, UserRoute, AuthRoute } from "./RouteComponents.js";
 
 import ErrorPage from "./pages/error/ErrorPage.js";
 import LayoutComponent from "./components/Layout/Layout.js";
-import Login from "./pages/auth/login/Login";
+import Login from "./pages/auth/login/Login.js";
 import Register from "./pages/auth/register/Register.js";
-import DocumentationLayout from "./documentation/DocumentaionLayout";
+import DocumentationLayout from "./documentation/DocumentaionLayout.js";
 
 import "./styles/app.scss";
 
