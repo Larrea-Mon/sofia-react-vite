@@ -1,6 +1,6 @@
 import React from 'react';
 import {createRoot} from "react-dom/client";
-import { routerMiddleware } from "connected-react-router";
+//import { routerMiddleware } from "connected-react-router";
 import { createStore, applyMiddleware, compose } from "redux";
 import ReduxThunk from "redux-thunk";
 import { Provider } from 'react-redux';

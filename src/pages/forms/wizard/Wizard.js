@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import Formsy from "formsy-react";
 import Select from "react-select";
-import MaskedInput from "react-maskedinput";
+import InputMask from "react-input-mask"; // <-- updated import
 import { selectCountriesData, selectShipmentData, cardTypesData } from "./data";
 import InputValidation from "../../../components/InputValidation/InputValidation";
 import Widget from "../../../components/Widget/Widget";
@@ -44,7 +44,6 @@ const StepsComponents = {
             validationError={{ isAlphanumeric: 'Username must contain symbols without spaces'}}
             required
           />
-          {/*<p className="help-block body-3 muted">Username can contain any letters or numbers, without spaces</p>*/}
         </FormGroup>
         <FormGroup>
           <Label for="email">Email</Label>
@@ -57,7 +56,6 @@ const StepsComponents = {
             validationError={{ isEmail: 'Please provide your E-mail' }}
             required
           />
-          {/*<p className="help-block body-3 muted">Please provide your E-mail</p>*/}
         </FormGroup>
         <FormGroup>
           <Label for="password">Password</Label>
@@ -69,7 +67,6 @@ const StepsComponents = {
             required
             validationError={{ isAlpha: 'Please provide your address' }}
           />
-          {/*<p className="help-block body-3 muted">Please provide your address</p>*/}
         </FormGroup>
       </fieldset>
     );
@@ -97,10 +94,14 @@ const StepsComponents = {
         </FormGroup>
         <FormGroup>
           <Label for="destination">Destination Zip Code</Label>
-          <MaskedInput
-            className="form-control" id="destination" mask="111111"
-            size="6"
-          />
+          <InputMask
+            className="form-control"
+            id="destination"
+            mask="999999"
+            maskChar=""
+          >
+            {(inputProps) => <input {...inputProps} type="text" size="6" />}
+          </InputMask>
           <p className="help-block body-3 muted">Please provide your Destination Zip Code</p>
         </FormGroup>
         <FormGroup>
@@ -128,21 +129,27 @@ const StepsComponents = {
         </FormGroup>
         <FormGroup>
           <Label for="card-number">Card Number</Label>
-          <MaskedInput
+          <InputMask
             className="form-control"
             id="card-number"
             name="card-number"
-            mask="1111 1111 1111 1111"
-          />
+            mask="9999 9999 9999 9999"
+            maskChar=""
+          >
+            {(inputProps) => <input {...inputProps} type="text" />}
+          </InputMask>
         </FormGroup>
         <FormGroup>
-          <Label for="expiration-date">Card Number</Label>
-          <MaskedInput
+          <Label for="expiration-date">Expiration Date</Label>
+          <InputMask
             className="form-control"
             id="expiration-date"
             name="expiration-date"
-            mask="11 &#8725; 11"
-          />
+            mask="99 / 99"
+            maskChar=""
+          >
+            {(inputProps) => <input {...inputProps} type="text" />}
+          </InputMask>
         </FormGroup>
       </fieldset>
     )

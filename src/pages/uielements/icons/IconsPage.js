@@ -10,7 +10,8 @@ import {
   NavLink,
 } from "reactstrap";
 import Widget from "../../../components/Widget/Widget";
-import * as Icons from "@material-ui/icons";
+//import * as Icons from "@material-ui/icons";
+import * as Icons from "@mui/icons-material";
 import "font-awesome/css/font-awesome.min.css";
 import "line-awesome/dist/line-awesome/css/line-awesome.min.css";
 import "eva-icons/style/eva-icons.css";
@@ -30,24 +31,24 @@ export default function IconsPage() {
       <Nav tabs className="mb-4">
         <NavItem>
           <NavLink
-            className={classnames({ active: activeTab === "1"})}
-            onClick={() => {toggleTab("1"); }}
+            className={classnames({ active: activeTab === "1" })}
+            onClick={() => { toggleTab("1"); }}
           >
             <div className="headline-3">Eva Icons</div>
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink
-            className={classnames({ active: activeTab === "2"})}
-            onClick={() => {toggleTab("2"); }}
+            className={classnames({ active: activeTab === "2" })}
+            onClick={() => { toggleTab("2"); }}
           >
             <div className="headline-3">Material Icons</div>
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink
-            className={classnames({ active: activeTab === "3"})}
-            onClick={() => {toggleTab("3"); }}
+            className={classnames({ active: activeTab === "3" })}
+            onClick={() => { toggleTab("3"); }}
           >
             <div className="headline-3">Font Awesome</div>
           </NavLink>
@@ -56,96 +57,96 @@ export default function IconsPage() {
       <TabContent activeTab={activeTab}>
         <TabPane tabId="1">
           <Row className={s.iconList}>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-github"/><span>GitHub</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-award"/><span>Award</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-activity"/><span>Activity</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-archive"/><span>Archive</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-battery"/><span>Battery</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-behance"/><span>Behance</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-bell"/><span>Bell</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-book"/><span>Book</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-browser"/><span>Browser</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-bookmark"/><span>Bookmark</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-bulb"/><span>Bulb</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-brush"/><span>Brush</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-calendar"/><span>Calendar</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-camera"/><span>Camera</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-car"/><span>Car</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-cast"/><span>Cast</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-checkmark"/><span>Checkmark</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-clipboard"/><span>Clipboard</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-clock"/><span>Clock</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-close"/><span>Close</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-code"/><span>Code</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-compass"/><span>Compass</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-copy"/><span>Copy</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-crop"/><span>Crop</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-cube"/><span>Cube</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-download"/><span>Download</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-droplet"/><span>Droplet</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-edit"/><span>Edit</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-email"/><span>Email</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-expand"/><span>Expand</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-eye"/><span>Eye</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-facebook"/><span>Facebook</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-file"/><span>File</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-film"/><span>Film</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-flag"/><span>Flag</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-flash"/><span>Flash</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-flip"/><span>Flip</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-folder"/><span>Folder</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-funnel"/><span>Funnel</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-list"/><span>List</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-gift"/><span>Gift</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-globe"/><span>Globe</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-grid"/><span>Grid</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-hash"/><span>Hash</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-heart"/><span>Heart</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-home"/><span>Home</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-image"/><span>Image</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-inbox"/><span>Inbox</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-info"/><span>Info</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-keypad"/><span>Keypad</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-layers"/><span>Layers</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-layout"/><span>Layout</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-link"/><span>Link</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-lock"/><span>Lock</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-map"/><span>Map</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-menu"/><span>Menu</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-mic"/><span>Mic</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-monitor"/><span>Monitor</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-moon"/><span>Moon</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-move"/><span>Move</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-music"/><span>Music</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-navigation"/><span>Navigation</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-npm"/><span>Npm</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-options"/><span>Options</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-pantone"/><span>Pantone</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-people"/><span>People</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-percent"/><span>Percent</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-person"/><span>Person</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-phone"/><span>Phone</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-pin"/><span>Pin</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-plus"/><span>Plus</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-power"/><span>Power</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-pricetags"/><span>Pricetags</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-printer"/><span>Printer</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-radio"/><span>Radio</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-recording"/><span>Recording</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-refresh"/><span>Refresh</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-repeat"/><span>Repeat</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-save"/><span>Save</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-scissors"/><span>Scissors</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-search"/><span>Search</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-settings"/><span>Settings</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-shake"/><span>Shake</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-share"/><span>Share</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-shield"/><span>Shield</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-shuffle"/><span>Shuffle</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-smartphone"/><span>Smartphone</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-speaker"/><span>Speaker</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-star"/><span>Star</span></Col>
-            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-sun"/><span>Sun</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-github" /><span>GitHub</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-award" /><span>Award</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-activity" /><span>Activity</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-archive" /><span>Archive</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-battery" /><span>Battery</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-behance" /><span>Behance</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-bell" /><span>Bell</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-book" /><span>Book</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-browser" /><span>Browser</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-bookmark" /><span>Bookmark</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-bulb" /><span>Bulb</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-brush" /><span>Brush</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-calendar" /><span>Calendar</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-camera" /><span>Camera</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-car" /><span>Car</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-cast" /><span>Cast</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-checkmark" /><span>Checkmark</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-clipboard" /><span>Clipboard</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-clock" /><span>Clock</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-close" /><span>Close</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-code" /><span>Code</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-compass" /><span>Compass</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-copy" /><span>Copy</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-crop" /><span>Crop</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-cube" /><span>Cube</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-download" /><span>Download</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-droplet" /><span>Droplet</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-edit" /><span>Edit</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-email" /><span>Email</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-expand" /><span>Expand</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-eye" /><span>Eye</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-facebook" /><span>Facebook</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-file" /><span>File</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-film" /><span>Film</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-flag" /><span>Flag</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-flash" /><span>Flash</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-flip" /><span>Flip</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-folder" /><span>Folder</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-funnel" /><span>Funnel</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-list" /><span>List</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-gift" /><span>Gift</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-globe" /><span>Globe</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-grid" /><span>Grid</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-hash" /><span>Hash</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-heart" /><span>Heart</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-home" /><span>Home</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-image" /><span>Image</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-inbox" /><span>Inbox</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-info" /><span>Info</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-keypad" /><span>Keypad</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-layers" /><span>Layers</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-layout" /><span>Layout</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-link" /><span>Link</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-lock" /><span>Lock</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-map" /><span>Map</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-menu" /><span>Menu</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-mic" /><span>Mic</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-monitor" /><span>Monitor</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-moon" /><span>Moon</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-move" /><span>Move</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-music" /><span>Music</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-navigation" /><span>Navigation</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-npm" /><span>Npm</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-options" /><span>Options</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-pantone" /><span>Pantone</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-people" /><span>People</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-percent" /><span>Percent</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-person" /><span>Person</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-phone" /><span>Phone</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-pin" /><span>Pin</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-plus" /><span>Plus</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-power" /><span>Power</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-pricetags" /><span>Pricetags</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-printer" /><span>Printer</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-radio" /><span>Radio</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-recording" /><span>Recording</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-refresh" /><span>Refresh</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-repeat" /><span>Repeat</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-save" /><span>Save</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-scissors" /><span>Scissors</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-search" /><span>Search</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-settings" /><span>Settings</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-shake" /><span>Shake</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-share" /><span>Share</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-shield" /><span>Shield</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-shuffle" /><span>Shuffle</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-smartphone" /><span>Smartphone</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-speaker" /><span>Speaker</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-star" /><span>Star</span></Col>
+            <Col xs={12} sm={4} md={3} lg={2}><i className="eva eva-sun" /><span>Sun</span></Col>
           </Row>
         </TabPane>
         <TabPane tabId="2">

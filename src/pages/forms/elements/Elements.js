@@ -21,13 +21,13 @@ import ReactMde from "react-mde";
 import * as Showdown from "showdown";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
-import ColorPicker from 'rc-color-picker';
+//import ColorPicker from 'rc-color-picker';
 import MaskedInput from "react-maskedinput";
 import { useDropzone } from 'react-dropzone';
 
 
-import 'rc-color-picker/assets/index.css';
-import "react-mde/lib/styles/css/react-mde-all.css";
+//import 'rc-color-picker/assets/index.css';
+//import "react-mde/lib/styles/css/react-mde-all.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Widget from "../../../components/Widget/Widget";
@@ -426,7 +426,7 @@ export default function Elements() {
                   </Col>
                 </Row>
                 <legend className="mt-5">Colors</legend>
-                <Row>
+                {/*<Row> COLORPICKER START
                   <Col>
                     <Form>
                       <FormGroup>
@@ -452,7 +452,7 @@ export default function Elements() {
 
                     </Form>
                   </Col>
-                </Row>
+                </Row> COLORPICKER END*/}
               </Widget>
             </Col>
             <Col xs={12} md={6} className="mt-4 mt-md-0">
