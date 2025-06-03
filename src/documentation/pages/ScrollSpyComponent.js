@@ -1,7 +1,6 @@
 import React from "react";
 import { HashLink as Link } from 'react-router-hash-link';
-import Scrollspy from "react-scrollspy";
-
+import { ScrollSpy } from '@makotot/ghostui';
 import s from '../Styles.module.scss';
 
 export default (props) => (
@@ -15,14 +14,15 @@ export default (props) => (
         }}
     >
         <h6 className="fw-semi-bold">{props.title}</h6>
-        <Scrollspy
-            items={props.ids}
-            currentClassName={s.activeScrollSpy}
+        <ScrollSpy
+            sectionIds={props.ids}
+            activeClass={s.activeScrollSpy}
             offset={-170}
+            as="ul"
         >
             {props.ids.map((id) => (
-                <li key="id" className="mb-xs"><Link to={`/documentation/${props.prefix}#${id}`} className={s.scrollSpy}>{id.split('-').join(' ')}</Link></li>
+                <li key={id} className="mb-xs"><Link to={`/documentation/${props.prefix}#${id}`} className={s.scrollSpy}>{id.split('-').join(' ')}</Link></li>
             ))}
-        </Scrollspy>
+        </ScrollSpy>
     </div>
 )

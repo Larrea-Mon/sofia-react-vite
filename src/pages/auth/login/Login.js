@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { withRouter, Link, Redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import config from "../../../config";
 import { connect } from "react-redux";
 //import { push } from "connected-react-router";
@@ -32,6 +32,7 @@ const Login = (props) => {
     password: 'password',
   })
   const navigate = useNavigate();
+  const location = useLocation();
 
   const doLogin = (e) => {
     e.preventDefault();
@@ -43,13 +44,13 @@ const Login = (props) => {
   }
 
   useEffect(() => {
-    const params = new URLSearchParams(props.location.search)
+    const params = new URLSearchParams(location.search)
     const token = params.get('token');
     if (token) {
       props.dispatch(receiveToken(token, navigate))
       props.dispatch(doInit())
     }
-  }, [props.location.search, props, navigate])
+  }, [location.search, props, navigate])
 
   return (
     <div className="auth-page">
@@ -125,7 +126,6 @@ const Login = (props) => {
       <Footer />
     </div>
   )
-
 }
 
 Login.propTypes = {
@@ -140,4 +140,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(Login));
+export default connect(mapStateToProps)(Login);

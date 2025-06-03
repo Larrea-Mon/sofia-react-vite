@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Switch, Route, Redirect, HashRouter } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { AdminRoute, UserRoute, AuthRoute } from "./RouteComponents.js";
 
@@ -17,28 +17,18 @@ const App = (props) => {
     <div>
       <ToastContainer/>
       <HashRouter>
-        <Switch>
-          <Route path="/" exact render={() => <Redirect to="/template/dashboard" />} />
-          <Route path="/template" exact render={() => <Redirect to="/template/dashboard"/>} />
-          <UserRoute
-            path="/template"
-            dispatch={props.dispatch}
-            component={LayoutComponent}
-          />
-          <AdminRoute
-            path="/admin"
-            currentUser={props.currentUser}
-            dispatch={props.dispatch}
-            component={LayoutComponent}
-          />
-          <Route path="/documentation" exact render={() => <Redirect to="/documentation/getting-started/overview"/>}/>
-          <Route path="/documentation" component={DocumentationLayout}/>
-          <AuthRoute path="/login" exact component={Login} />
-          <AuthRoute path="/register" exact component={Register} />
-          <Route path="/error" exact component={ErrorPage} />
-          <Redirect from="*" to="/template/dashboard" />
-          <Route path='*' exact render={() => <Redirect to="/error" />} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Navigate to="/template/dashboard" replace />} />
+          <Route path="/template" element={<Navigate to="/template/dashboard" replace />} />
+          <Route path="/template/*" element={<UserRoute dispatch={props.dispatch} component={LayoutComponent} />} />
+          <Route path="/admin/*" element={<AdminRoute currentUser={props.currentUser} dispatch={props.dispatch} component={LayoutComponent} />} />
+          <Route path="/documentation" element={<Navigate to="/documentation/getting-started/overview" replace />} />
+          <Route path="/documentation/*" element={<DocumentationLayout />} />
+          <Route path="/login" element={<AuthRoute component={Login} />} />
+          <Route path="/register" element={<AuthRoute component={Register} />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="*" element={<Navigate to="/template/dashboard" replace />} />
+        </Routes>
       </HashRouter>
     </div>
   );

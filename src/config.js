@@ -12,7 +12,7 @@ const redirectUrl = process.env.NODE_ENV === "development"
   : "https://demo.flatlogic.com/sofia-react";
 
 
-export default {
+const config = {
   redirectUrl,
   hostApi,
   portApi,
@@ -24,3 +24,5 @@ export default {
     password: 'password'
   },
 };
+
+export default config;

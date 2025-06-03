@@ -197,7 +197,7 @@ grid-col-padding {
   border-radius: 5px;
 }
 
-.btn, {
+.btn {
   &:not(.active) {
     box-shadow: none !important;
   }
@@ -495,7 +495,7 @@ table > thead > tr > th {
 
 .table-hover {
   tbody tr {
-    @include hover() {
+    &:hover {
       background-color: $violet;
       td {
         color: white;
@@ -718,7 +718,8 @@ input[type='checkbox'] .styled:checked + label::after {
     color: $base-dark-gray;
     @include border-top-radius($nav-tabs-border-radius);
 
-    @include hover-focus() {
+    &:hover,
+    &:focus {
       border-color: $nav-tabs-link-hover-border-color;
     }
 
@@ -1178,7 +1179,7 @@ li.react-datepicker__time-list-item--selected {
 
   // Daygrid
   .fc-scrollgrid-section-liquid > td {
-    border-borrom: 0;
+    border-bottom: 0;
   }
   .fc-daygrid-event-harness {
     .fc-event {
@@ -1370,6 +1371,10 @@ li.react-datepicker__time-list-item--selected {
     width: ($modal-slide-in-width-sm - 5);
 
     .modal-content {
+      // Fallback values for missing variables
+      $modal-title-line-height: 1.5 !default;
+      $close-font-size: 1.5rem !default;
+      $modal-header-padding-y: 1rem !default;
       padding-bottom: ($modal-title-line-height * $close-font-size) + $modal-header-padding-y;
       padding-top: ($modal-title-line-height * $close-font-size) + $modal-header-padding-y;
       overflow: auto;
@@ -1618,6 +1623,7 @@ li.react-datepicker__time-list-item--selected {
 .flatpickr-current-month {
   .flatpickr-monthDropdown-months {
     -webkit-appearance: none;
+    appearance: none;
   }
 
   .flatpickr-monthDropdown-months,
@@ -1692,9 +1698,6 @@ li.react-datepicker__time-list-item--selected {
 }
 
 ////// React-chrono timeline
-.vertical-item-row {
-  //height: 50px;
-}
 .card-content-wrapper {
   section {
     min-height: auto;

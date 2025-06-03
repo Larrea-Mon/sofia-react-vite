@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { withRouter, Redirect, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   Container,
@@ -26,6 +26,7 @@ import { registerUser } from "../../../actions/register.js";
 const Register = (props) => {
   const [state, setState] = useState({ email: '', password: ''} )
   const navigate = useNavigate();
+  const location = useLocation();
 
   const changeCred = (event) => {
     setState({ ...state, [event.target.name]: event.target.value })
@@ -36,15 +37,13 @@ const Register = (props) => {
     props.dispatch(registerUser(state, navigate))
   }
 
-  const { from } = props.location.state || { from: { pathname: '/template' } }
+  const { from } = (location.state && location.state.from) || { from: { pathname: '/template' } }
 
-  if (!window.location.href.includes('extra')) {
-    if (hasToken()) {
-      return (
-        <Redirect to={from} />
-      );
-    }
+  if (hasToken()) {
+    // If already authenticated, redirect
+    return <Navigate to={from} replace />
   }
+
   return (
     <div className="auth-page">
       <Container className="col-12">
@@ -52,58 +51,60 @@ const Register = (props) => {
           <Col xs={12} lg={6} className="left-column">
             <Widget className="widget-auth widget-p-lg">
               <div className="d-flex align-items-center justify-content-between py-3">
-                <p className="auth-header mb-0">Sign Up</p>
+                <p className="auth-header mb-0">Register</p>
                 <div className="logo-block">
                   <SofiaLogo />
                   <p className="mb-0">SOFIA</p>
                 </div>
               </div>
-              <div className="auth-info my-2">
-                <p>This is a real app with Node.js backend - use <b>"admin@flatlogic.com / password"</b> to login!</p>
-              </div>
-              <form onSubmit={(event) => doRegister(event)}>
+              <form onSubmit={doRegister}>
                 <FormGroup className="my-3">
                   <FormText>Email</FormText>
-                  <Input id="email" className="input-transparent pl-3" value={state.email} onChange={(event) => changeCred(event)} type="email" required name="email" placeholder="Henry Monk" />
+                  <Input
+                    id="email"
+                    className="input-transparent pl-3"
+                    value={state.email}
+                    onChange={changeCred}
+                    type="email"
+                    required
+                    name="email"
+                    placeholder="Email"
+                  />
                 </FormGroup>
-                <FormGroup  className="my-3">
-                  <div className="d-flex justify-content-between">
-                    <FormText>Password</FormText>
-                    <Link to="/error">Forgot password?</Link>
-                  </div>
-                  <Input id="password" className="input-transparent pl-3" value={state.password} onChange={(event) => changeCred(event)} type="password" required name="password" placeholder="Place your password here"/>
+                <FormGroup className="my-3">
+                  <FormText>Password</FormText>
+                  <Input
+                    id="password"
+                    className="input-transparent pl-3"
+                    value={state.password}
+                    onChange={changeCred}
+                    type="password"
+                    required
+                    name="password"
+                    placeholder="Password"
+                  />
                 </FormGroup>
                 <div className="bg-widget d-flex justify-content-center">
-                  <Button className="rounded-pill my-3" type="submit" color="secondary-red">Sign Up</Button>
+                  <Button className="rounded-pill my-3" type="submit" color="secondary-red">Register</Button>
                 </div>
                 <p className="dividing-line my-3">&#8195;Or&#8195;</p>
                 <div className="d-flex align-items-center my-3">
-                  <p className="social-label mb-0">Login with</p>
+                  <p className="social-label mb-0">Register with</p>
                   <div className="socials">
-                    <a href="https://flatlogic.com/" target = "_blank" rel = "noopener noreferrer">
-                      <GoogleIcon />
-                    </a>
-                    <a href="https://twitter.com/flatlogic/" target = "_blank" rel = "noopener noreferrer">
-                      <TwitterIcon />
-                    </a>
-                    <a href="https://www.facebook.com/flatlogic" target = "_blank" rel = "noopener noreferrer">
-                      <FacebookIcon />
-                    </a>
-                    <a href="https://github.com/flatlogic/" target = "_blank" rel = "noopener noreferrer">
-                      <GithubIcon />
-                    </a>
-                    <a href="https://www.linkedin.com/company/flatlogic/" target = "_blank" rel = "noopener noreferrer">
-                      <LinkedinIcon />
-                    </a>
+                    <a href="https://flatlogic.com/"><GoogleIcon /></a>
+                    <a href="https://flatlogic.com/"><TwitterIcon /></a>
+                    <a href="https://flatlogic.com/"><FacebookIcon /></a>
+                    <a href="https://flatlogic.com/"><GithubIcon /></a>
+                    <a href="https://flatlogic.com/"><LinkedinIcon /></a>
                   </div>
                 </div>
-                <Link to="/login">Enter the account</Link>
+                <Link to="/login">Already have an account? Login here</Link>
               </form>
             </Widget>
           </Col>
           <Col xs={0} lg={6} className="right-column">
             <div>
-              <img src={loginImage} alt="Error page" />
+              <img src={loginImage} alt="Register page" />
             </div>
           </Col>
         </Row>
@@ -119,10 +120,10 @@ Register.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    isFetching: state.auth.isFetching,
-    isAuthenticated: state.auth.isAuthenticated,
-    errorMessage: state.auth.errorMessage,
+    isFetching: state.register.isFetching,
+    isRegistered: state.register.isRegistered,
+    errorMessage: state.register.errorMessage,
   };
 }
 
-export default withRouter(connect(mapStateToProps)(Register));
+export default connect(mapStateToProps)(Register);

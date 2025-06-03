@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import s from '../../pages/forms/elements/Elements.module.scss';
 import "eva-icons/style/eva-icons.css";
 //import * as Icons from "@material-ui/icons";
-import * as Icons from '@mui/icons-material/';
+import * as Icons from '@mui/icons-material';
 export default class Libs extends Component {
     state = {
         mde: '',

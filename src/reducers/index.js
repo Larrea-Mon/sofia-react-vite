@@ -6,10 +6,12 @@ import calendar from "./calendar.js";
 import users from "./usersReducers";
 //import { connectRouter } from "connected-react-router";
 
-export default () =>
+const rootReducer = () =>
   combineReducers({
     auth,
     navigation,
     calendar,
     users,
   });
+
+export default rootReducer;
