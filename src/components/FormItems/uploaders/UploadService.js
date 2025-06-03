@@ -1,4 +1,4 @@
-import * as uuid from "uuid/v4";
+import { v4 as uuidv4 } from 'uuid';
 import Axios from "axios";
 import config from "../../../config";
 
@@ -44,7 +44,7 @@ export default class FileUploader {
     }
 
     const extension = extractExtensionFrom(file.name);
-    const id = uuid();
+    const id = uuidv4();
     const filename = `${id}.${extension}`;
     const privateUrl = `${path}/${filename}`;
 

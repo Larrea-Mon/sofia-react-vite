@@ -7,7 +7,7 @@ import {
   Label,
 } from 'reactstrap';
 import Widget from "../../../components/Widget/Widget";
-import Formsy from "formsy-react";
+//import Formsy from "formsy-react";
 import InputValidation from "../../../components/InputValidation/InputValidation";
 import FormikForm from "./formik/FormikForm";
 
@@ -21,6 +21,7 @@ export default function Validation() {
             <Col xs={12} lg={6}>
               <Widget className="widget-p-md">
                 <div className="headline-2 mb-2">Simple Validation</div>
+                {/*
                 <Formsy>
                   <fieldset className="mb-4">
                     <legend>
@@ -143,8 +144,8 @@ export default function Validation() {
                   <div className="d-flex justify-content-between mt-4">
                     <Button type="reset" color="secondary" className="">Cancel</Button>
                     <Button type="submit" color="primary" className="float-right">Validate & Submit</Button>
-                  </div>
-                </Formsy>
+                  </div>  FORMSY END
+                </Formsy> */}
               </Widget>
             </Col>
             <Col xs={12} lg={6} className="mt-4 mt-md-0">

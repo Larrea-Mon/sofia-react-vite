@@ -7,7 +7,7 @@ import {
   Label,
   Jumbotron,
 } from 'reactstrap';
-import Formsy from "formsy-react";
+//import Formsy from "formsy-react";
 import Select from "react-select";
 import InputMask from "react-input-mask"; // <-- updated import
 import { selectCountriesData, selectShipmentData, cardTypesData } from "./data";
@@ -41,7 +41,7 @@ const StepsComponents = {
             name="username"
             trigger="change"
             validations={{ isAlphanumeric: true }}
-            validationError={{ isAlphanumeric: 'Username must contain symbols without spaces'}}
+            validationError={{ isAlphanumeric: 'Username must contain symbols without spaces' }}
             required
           />
         </FormGroup>
@@ -219,12 +219,14 @@ export default function Wizard() {
                   <li className={`${s.confirm} ${isActive(4) && s.active}`}><strong>Finish</strong></li>
                 </ul>
                 <div className={`bg-light-gray p-3 ${s.formBlock} ${currentStep === 4 && s.jumbotronBg}`}>
+                  {/* FORMSY START
                   <Formsy>
                     {currentStep === 1 && <StepsComponents.Step1 />}
                     {currentStep === 2 && <StepsComponents.Step2 />}
                     {currentStep === 3 && <StepsComponents.Step3 />}
                     {currentStep === 4 && <StepsComponents.Step4 />}
-                  </Formsy>
+                  </Formsy> FORMSY END
+                  */}
                 </div>
                 <div className="mt-3 d-flex justify-content-between">
                   <Button
@@ -233,29 +235,29 @@ export default function Wizard() {
                     color="primary"
                     onClick={previousStep}
                   >
-                    <i className="fa fa-angle-left mr-1"/>
+                    <i className="fa fa-angle-left mr-1" />
                     &nbsp;Previous
                   </Button>
                   <div>
                     {currentStep < steps &&
-                    <Button
-                      type="submit"
-                      className="d-flex align-items-center"
-                      color="primary"
-                      onClick={nextStep}
-                    >
-                      Next
-                      <i className="fa fa-angle-right ml-1"/>
-                    </Button>
+                      <Button
+                        type="submit"
+                        className="d-flex align-items-center"
+                        color="primary"
+                        onClick={nextStep}
+                      >
+                        Next
+                        <i className="fa fa-angle-right ml-1" />
+                      </Button>
                     }
                     {currentStep === steps &&
-                    <Button
-                      className="d-flex align-items-center"
-                      color="success"
-                      onClick={nextStep}
-                    >
-                      Finish
-                    </Button>
+                      <Button
+                        className="d-flex align-items-center"
+                        color="success"
+                        onClick={nextStep}
+                      >
+                        Finish
+                      </Button>
                     }
                   </div>
                 </div>

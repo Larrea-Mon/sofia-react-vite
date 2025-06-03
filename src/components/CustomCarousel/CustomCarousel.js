@@ -3,9 +3,12 @@ import {
   Button,
 } from "reactstrap";
 import Widget from "../Widget/Widget.js";
-import MobileStepper from '@material-ui/core/MobileStepper';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+//import MobileStepper from '@material-ui/core/MobileStepper';
+import MobileStepper from '@mui/material/MobileStepper';
+//import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+//import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useSwipeable } from "react-swipeable";
 
 import s from "./CustomCarousel.module.scss";

@@ -1,9 +1,14 @@
 import React from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepConnector from '@material-ui/core/StepConnector';
+//import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@mui/styles";
+//import Stepper from '@material-ui/core/Stepper';
+import Stepper from '@mui/material/Stepper';
+//import Step from '@material-ui/core/Step';
+import Step from '@mui/material/Step';
+//import StepLabel from '@material-ui/core/StepLabel';
+import StepLabel from '@mui/material/StepLabel';
+//import StepConnector from '@material-ui/core/StepConnector';
+import StepConnector from '@mui/material/StepConnector';
 import mock from "../mock";
 
 const useStyles = makeStyles((theme) => ({

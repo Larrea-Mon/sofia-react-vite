@@ -4,13 +4,14 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 //import ColorPiker from 'rc-color-picker';
 import Select from 'react-select';
-import MaskedInput from 'react-maskedinput'
+//import MaskedInput from 'react-maskedinput'
+import InputMask from 'react-input-mask'; // <-- updated import
 import Scrollspy from './ScrollSpyComponent';
 import { Link } from 'react-router-dom';
 import s from '../../pages/forms/elements/Elements.module.scss';
 import "eva-icons/style/eva-icons.css";
-import * as Icons from "@material-ui/icons";
-
+//import * as Icons from "@material-ui/icons";
+import * as Icons from '@mui/icons-material/';
 export default class Libs extends Component {
     state = {
         mde: '',
@@ -217,7 +218,7 @@ export default class Libs extends Component {
                         <p>For more examples and documentation please refer to <a
                             href="https://github.com/tomchentw/react-google-maps" target="_blank" rel="noopener noreferrer">Google Maps</a></p>
                     </Container>
-                    <Container id="React-Maskedinput" className="my-4">
+                    {/*<Container id="React-Maskedinput" className="my-4">
                         <h3>React-maskedinput</h3>
                         <p>A React component for <code>&lt;input></code> masking, built on top of inputmask-core.</p>
                         <div style={{width: '200px'}}>
@@ -228,6 +229,8 @@ export default class Libs extends Component {
                         <p>For more examples and documentation please refer to <a href="https://github.com/insin/react-maskedinput"
                                                                                   target="_blank" rel="noopener noreferrer">Masked Input</a></p>
                     </Container>
+                    TODO hacer una de estas para react-input-mask
+                    */}
                     <Container id="React-MDE" className="my-4">
                         <h3>React-mde</h3>
                         <p>A simple yet powerful and extensible Markdown Editor editor for React. React-mde is built on top of

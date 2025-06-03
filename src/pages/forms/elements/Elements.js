@@ -17,12 +17,15 @@ import {
   DropdownToggle
 } from "reactstrap";
 import TextareaAutosize from "react-textarea-autosize";
-import ReactMde from "react-mde";
+//import ReactMde from "react-mde";
+import MDEditor from '@uiw/react-md-editor';
+// parece que esto no hace nada TODO quitar al final
 import * as Showdown from "showdown";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 //import ColorPicker from 'rc-color-picker';
-import MaskedInput from "react-maskedinput";
+//import MaskedInput from "react-maskedinput";
+import InputMask from "react-input-mask"; // <-- updated import
 import { useDropzone } from 'react-dropzone';
 
 
@@ -135,7 +138,7 @@ export default function Elements() {
                     <FormGroup row>
                       <Label md={3} for="normal-field" className="text-md-right">Normal field</Label>
                       <Col md={9}>
-                        <Input type="text" id="normal-field" placeholder="May have placeholder"/>
+                        <Input type="text" id="normal-field" placeholder="May have placeholder" />
                       </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -144,13 +147,13 @@ export default function Elements() {
                         <span className="label muted">Some help text</span>
                       </Label>
                       <Col md={9}>
-                        <Input type="text" name="password" id="hint-field"/>
+                        <Input type="text" name="password" id="hint-field" />
                       </Col>
                     </FormGroup>
                     <FormGroup row>
                       <Label md={3} for="tooltip-enabled" className="text-md-right">Tooltip Enabled</Label>
                       <Col md={9}>
-                        <Input type="text" id="tooltip-enabled" placeholder="Hover on me..."/>
+                        <Input type="text" id="tooltip-enabled" placeholder="Hover on me..." />
                         <UncontrolledTooltip target="tooltip-enabled" placement="top">Some explanation text here</UncontrolledTooltip>
                       </Col>
                     </FormGroup>
@@ -352,20 +355,20 @@ export default function Elements() {
                             You can select some type of a field just right in the place.
                           </span>
 
-                        {/*  <FormGroup>*/}
-                        {/*    <UncontrolledButtonDropdown>*/}
-                        {/*      <DropdownToggle caret>*/}
-                        {/*        Dropdown*/}
-                        {/*      </DropdownToggle>*/}
-                        {/*      <DropdownMenu>*/}
-                        {/*        <DropdownItem>Action</DropdownItem>*/}
-                        {/*        <DropdownItem>Action</DropdownItem>*/}
-                        {/*        <DropdownItem>Action</DropdownItem>*/}
-                        {/*        <DropdownItem divider />*/}
-                        {/*        <DropdownItem>Another Action</DropdownItem>*/}
-                        {/*      </DropdownMenu>*/}
-                        {/*    </UncontrolledButtonDropdown>*/}
-                        {/*  </FormGroup>*/}
+                          {/*  <FormGroup>*/}
+                          {/*    <UncontrolledButtonDropdown>*/}
+                          {/*      <DropdownToggle caret>*/}
+                          {/*        Dropdown*/}
+                          {/*      </DropdownToggle>*/}
+                          {/*      <DropdownMenu>*/}
+                          {/*        <DropdownItem>Action</DropdownItem>*/}
+                          {/*        <DropdownItem>Action</DropdownItem>*/}
+                          {/*        <DropdownItem>Action</DropdownItem>*/}
+                          {/*        <DropdownItem divider />*/}
+                          {/*        <DropdownItem>Another Action</DropdownItem>*/}
+                          {/*      </DropdownMenu>*/}
+                          {/*    </UncontrolledButtonDropdown>*/}
+                          {/*  </FormGroup>*/}
 
 
                         </FormGroup>
@@ -465,12 +468,14 @@ export default function Elements() {
                     <span className="label muted">(123) 456-7890</span>
                   </Label>
                   <Col md="8" xs="12">
-                    <MaskedInput
+                    <InputMask
                       className="form-control"
                       id="mask-phone"
-                      mask="(111) 111-1111"
-                      size="10"
-                    />
+                      mask="(999) 999-9990"
+                      maskChar=""
+                    >
+                      {(inputProps) => <input {...inputProps} type="text" size="10" />}
+                    </InputMask>
                   </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -479,11 +484,14 @@ export default function Elements() {
                     <span className="label muted">+972 123 456 789</span>
                   </Label>
                   <Col md="8" xs="12">
-                    <MaskedInput
+                    <InputMask
                       className="form-control"
                       id="mask-int-phone"
-                      mask="+111 111 111 111"
-                    />
+                      mask="+999 999 999 999"
+                      maskChar=""
+                    >
+                      {(inputProps) => <input {...inputProps} type="text" />}
+                    </InputMask>
                   </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -492,11 +500,14 @@ export default function Elements() {
                     <span className="label muted">07-06-2021</span>
                   </Label>
                   <Col md="8" xs="12">
-                    <MaskedInput
+                    <InputMask
                       className="form-control"
                       id="mask-date"
-                      mask="11-11-1111"
-                    />
+                      mask="99-99-9999"
+                      maskChar=""
+                    >
+                      {(inputProps) => <input {...inputProps} type="text" />}
+                    </InputMask>
                   </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -505,11 +516,14 @@ export default function Elements() {
                     <span className="label muted">19:45</span>
                   </Label>
                   <Col md="8" xs="12">
-                    <MaskedInput
+                    <InputMask
                       className="form-control"
                       id="mask-time"
-                      mask="11:11"
-                    />
+                      mask="99:99"
+                      maskChar=""
+                    >
+                      {(inputProps) => <input {...inputProps} type="text" />}
+                    </InputMask>
                   </Col>
                 </FormGroup>
               </Widget>
@@ -538,7 +552,7 @@ export default function Elements() {
                       />
                     </Col>
                   </FormGroup>
-                  <FormGroup row>
+                  {/*<FormGroup row> ReactMDE START
                     <Label md={3} className="text-md-right" for="markdown-editor">Markdown Editor</Label>
                     <Col md={9}>
                       <ReactMde
@@ -555,6 +569,18 @@ export default function Elements() {
                           }
                         }}
                       />
+                    </Col>
+                  </FormGroup>  REACTMDE END*/}
+                  <FormGroup row>
+                    <Label md={3} className="text-md-right" for="markdown-editor">Markdown Editor</Label>
+                    <Col md={9}>
+                      <div data-color-mode="light">
+                        <MDEditor
+                          value={markdownValue}
+                          onChange={setMarkdownValue}
+                          height={200}
+                        />
+                      </div>
                     </Col>
                   </FormGroup>
                 </Form>
@@ -954,7 +980,7 @@ export default function Elements() {
                       below.
                     </div>
                     <div className={`mt-2 ${s.imageArea}`}>
-                      <img id="imageResult" src="#" alt="" className="img-fluid rounded shadow-sm mx-auto d-block"/>
+                      <img id="imageResult" src="#" alt="" className="img-fluid rounded shadow-sm mx-auto d-block" />
                     </div>
                   </Col>
                 </FormGroup>
