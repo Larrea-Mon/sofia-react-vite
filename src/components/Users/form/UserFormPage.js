@@ -1,20 +1,24 @@
+
+
 import React, { useState, useEffect } from 'react';
-import UsersForm from "./UsersForm";
-//import { push } from "connected-react-router";
 import { connect } from 'react-redux';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import actions from "../../../actions/usersFormActions";
+import UsersForm from "./UsersForm";
 import { Alert } from 'reactstrap';
 import cx from 'classnames';
-
 import s from "../Users.module.scss";
 
+
 const UserFormPage = (props) => {
-  const [dispatched, setDispatched] = useState(false)
-  const [promoAlert, setPromoAlert] = useState(false)
+  const [dispatched, setDispatched] = useState(false);
+  const [promoAlert, setPromoAlert] = useState(false);
+  const navigate = useNavigate();
+  const params = useParams();
+  const location = useLocation();
 
   const {
     dispatch,
-    match,
     saveLoading,
     findLoading,
     record,
@@ -22,47 +26,48 @@ const UserFormPage = (props) => {
   } = props;
 
   const showPromoAlert = () => {
-    setPromoAlert(true)
-  }
+    setPromoAlert(true);
+  };
 
   const isEditing = () => {
-    return !!match.params.id;
-  }
+    return !!params.id;
+  };
 
   const isProfile = () => {
     const currentUser = JSON.parse(localStorage.getItem('user'));
-    const currentUserId = currentUser.id;
-    if (match.params.id === currentUserId) {
+    const currentUserId = currentUser?.id || currentUser?.user?.id;
+    if (params.id === currentUserId) {
       return true;
     }
-    return match.url === '/template/edit_profile';
-  }
+    return location.pathname === '/template/edit_profile';
+  };
 
   const doSubmit = (id, data) => {
     if (isEditing() || isProfile()) {
       dispatch(actions.doUpdate(id, data, isProfile()));
     } else {
-      dispatch(actions.doCreate(data))
+      dispatch(actions.doCreate(data));
     }
-  }
+  };
 
   useEffect(() => {
     if (isEditing()) {
-      dispatch(actions.doFind(match.params.id));
+      dispatch(actions.doFind(params.id));
     } else {
       if (isProfile()) {
         const currentUser = JSON.parse(localStorage.getItem('user'));
-        const currentUserId = currentUser?.user?.id;
-        dispatch(actions.doFind(currentUserId))
+        const currentUserId = currentUser?.id || currentUser?.user?.id;
+        dispatch(actions.doFind(currentUserId));
       } else {
         dispatch(actions.doNew());
       }
     }
-    setDispatched(true)
+    setDispatched(true);
     setTimeout(() => {
       showPromoAlert();
-    }, 100)
-  }, [match, dispatch])
+    }, 100);
+    // eslint-disable-next-line
+  }, [dispatch, location.pathname, params.id]);
 
   return (
     <React.Fragment>
@@ -86,7 +91,7 @@ const UserFormPage = (props) => {
           isEditing={isEditing()}
           isProfile={isProfile()}
           onSubmit={doSubmit}
-          onCancel={() => dispatch(push('/admin/users'))}
+          onCancel={() => navigate('/admin/users')}
         />
       )}
     </React.Fragment>

@@ -1,24 +1,20 @@
 import React from 'react';
-import {
-  Row,
-  Col,
-  Button,
-  Jumbotron,
-  Container,
-} from "reactstrap";
+import { Row, Col, Button, Container } from "reactstrap";
+
 
 export default function UIJumbotron() {
   return (
     <div>
-      <Jumbotron fluid>
+      {/* Fluid Jumbotron replacement */}
+      <div className="p-5 mb-4 bg-light rounded-3">
         <Container fluid className="px-4">
           <h1 className="display-3">Fluid jumbotron</h1>
           <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </Container>
-      </Jumbotron>
+      </div>
       <Row>
         <Col xs={12} md={8}>
-          <Jumbotron>
+          <div className="p-5 bg-light rounded-3">
             <h1 className="display-3">Hello, world!</h1>
             <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr className="my-2" />
@@ -26,9 +22,9 @@ export default function UIJumbotron() {
             <p className="lead">
               <Button color="primary">Learn More</Button>
             </p>
-          </Jumbotron>
+          </div>
         </Col>
       </Row>
     </div>
-  )
+  );
 }

@@ -27,24 +27,24 @@ import Carousel from "../../pages/uielements/carousel/Carousel";
 import Charts from "../../pages/extra/charts/Charts";
 import Jumbotron from "../../pages/uielements/jumbotron/Jumbotron";
 import Icons from "../../pages/uielements/icons/IconsPage";
-import Lists from "../../pages/uielements/lists/Lists";
-import Navbars from "../../pages/uielements/navbar/Navbars"
-import Navs from "../../pages/uielements/navs/Navs";
-import Modal from "../../pages/uielements/modal/Modal";
-import Progress from "../../pages/uielements/progress/Progress";
-import Popover from "../../pages/uielements/popovers/Popovers";
-import Elements from "../../pages/forms/elements/Elements";
-import Validation from "../../pages/forms/validation/Validation";
-import Wizard from "../../pages/forms/wizard/Wizard";
-import BarCharts from "../../pages/charts/bar/BarCharts";
-import LineCharts from "../../pages/charts/line/LineCharts";
-import PieCharts from "../../pages/charts/pie/PieCharts";
-import OtherCharts from "../../pages/charts/other/OtherCharts";
-import Maps from "../../pages/maps/google/GoogleMapPage";
-import VectorMap from "../../pages/maps/vector/Vector";
-import Calendar from "../../pages/calendar/Calendar";
-import Login from "../../pages/auth/login/Login";
-import Register from "../../pages/auth/register/Register";
+// import Lists from "../../pages/uielements/lists/Lists";
+// import Navbars from "../../pages/uielements/navbar/Navbars";
+// import Navs from "../../pages/uielements/navs/Navs";
+// import Modal from "../../pages/uielements/modal/Modal";
+// import Progress from "../../pages/uielements/progress/Progress";
+// import Popover from "../../pages/uielements/popovers/Popovers";
+// import Elements from "../../pages/forms/elements/Elements";
+// import Validation from "../../pages/forms/validation/Validation";
+// import Wizard from "../../pages/forms/wizard/Wizard";
+// import BarCharts from "../../pages/charts/bar/BarCharts";
+// import LineCharts from "../../pages/charts/line/LineCharts";
+// import PieCharts from "../../pages/charts/pie/PieCharts";
+// import OtherCharts from "../../pages/charts/other/OtherCharts";
+// import Maps from "../../pages/maps/google/GoogleMapPage";
+// import VectorMap from "../../pages/maps/vector/Vector";
+// import Calendar from "../../pages/calendar/Calendar";
+// import Login from "../../pages/auth/login/Login";
+// import Register from "../../pages/auth/register/Register";
 
 import s from "./Layout.module.scss";
 
@@ -62,6 +62,9 @@ const Layout = (props) => {
             <Route path="/template/dashboard" element={<Dashboard />} />
             <Route path="/template/user" element={<Navigate to="/template/user/profile" replace />} />
             <Route path="/template/user/profile" element={<Profile />} />
+            {/*
+            FROM HERE
+
             <Route path="/admin" element={<Navigate to="/admin/users" replace />} />
             <Route path="/admin/users" element={<UserListPage />} />
             <Route path="/admin/users/new" element={<UserFormPage />} />
@@ -107,7 +110,10 @@ const Layout = (props) => {
             <Route path="/template/extra/login" element={<Login />} />
             <Route path="/template/extra/register" element={<Register />} />
             <Route path="/register" element={<Register />} />
-            <Route path="*" element={<Navigate to="/error" replace />} />
+            <Route path="*" element={<Navigate to="/error" replace />} /> 
+            
+            TO HERE
+            */}
           </Routes>
         </main>
         <Footer />

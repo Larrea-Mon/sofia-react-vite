@@ -1,15 +1,18 @@
-import React, {useState, Component, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import ChangePasswordForm from "./ChangePasswordForm";
-//import { push } from "connected-react-router";
 import actions from "../../../actions/usersFormActions";
 import { connect } from "react-redux";
 import { Alert } from 'reactstrap';
 import cx from 'classnames';
 
+import { useNavigate } from 'react-router-dom';
+
 import s from "../Users.module.scss";
+
 
 const ChangePasswordFormPage = (props) => {
   const [promoAlert, setPromoAlert] = useState(false);
+  const navigate = useNavigate();
 
   const showPromoAlert = () => {
     setPromoAlert(true)
@@ -20,11 +23,10 @@ const ChangePasswordFormPage = (props) => {
   }
 
   useEffect(() => {
-
     setTimeout(() => {
       showPromoAlert()
     }, 1000)
-  })
+  }, []);
 
   return (
     <React.Fragment>
@@ -41,7 +43,7 @@ const ChangePasswordFormPage = (props) => {
         saveLoading={props.saveLoading}
         findLoading={props.findLoading}
         onSubmit={doSubmit}
-        onCancel={() => props.dispatch(push('/admin/users'))}
+        onCancel={() => navigate('/admin/users')}
       />
     </React.Fragment>
   );

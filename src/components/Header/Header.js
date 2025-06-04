@@ -7,7 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  InputGroupAddon,
   InputGroup,
   Input,
   Dropdown,
@@ -79,11 +78,9 @@ const Header = (props) => {
         <FormGroup>
           <InputGroup>
             <Input id="search-input" placeholder="Search Dashboard" className='focus no-border'/>
-            <InputGroupAddon addonType="prepend">
-              <span className="d-flex align-self-center px-3">
-                <SearchBarIcon/>
-              </span>
-            </InputGroupAddon>
+            <span className="input-group-text d-flex align-self-center px-3" style={{ background: 'none', border: 'none' }}>
+              <SearchBarIcon/>
+            </span>
           </InputGroup>
         </FormGroup>
       </Form>
