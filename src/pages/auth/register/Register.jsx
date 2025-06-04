@@ -11,8 +11,8 @@ import {
   FormText,
   Input,
 } from "reactstrap";
-import Widget from "../../../components/Widget/Widget.js";
-import Footer from "../../../components/Footer/Footer.js";
+import Widget from "../../../components/Widget/Widget.jsx";
+import Footer from "../../../components/Footer/Footer.jsx";
 import hasToken from "../../../services/authService";
 import loginImage from "../../../assets/registerImage.svg";
 import SofiaLogo from "../../../components/Icons/SofiaLogo.js";

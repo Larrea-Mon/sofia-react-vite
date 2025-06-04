@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { AdminRoute, UserRoute, AuthRoute } from "./RouteComponents.js";
+import { AdminRoute, UserRoute, AuthRoute } from "./RouteComponents.jsx";
 
 import ErrorPage from "./pages/error/ErrorPage.jsx";
 import LayoutComponent from "./components/Layout/Layout.jsx";

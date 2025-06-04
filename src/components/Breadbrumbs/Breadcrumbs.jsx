@@ -1,4 +1,4 @@
-import React from "react";
+// filepath: /home/lar/maqueta-industrial-web-pfm/src/components/Breadbrumbs/Breadcrumbs.jsx
 import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";

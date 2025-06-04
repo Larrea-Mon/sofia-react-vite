@@ -6,7 +6,9 @@
   "scripts": {
     "analyze": "ANALYZE=true npm run build",
     "dev": "vite",
+    "dev-log": "mkdir -p logs && vite 2>&1 | tee logs/vite-dev-$(date +\"%Y-%m-%d_%H-%M-%S\").log",
     "build": "vite build",
+    "build-log": "mkdir -p logs && vite build 2>&1 | tee logs/vite-build-$(date +\"%Y-%m-%d_%H-%M-%S\").log",
     "preview": "vite preview"
   },
   "dependencies": {

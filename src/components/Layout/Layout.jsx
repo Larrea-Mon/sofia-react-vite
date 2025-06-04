@@ -6,7 +6,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
-import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
+import Breadcrumbs from "../Breadbrumbs/Breadcrumbs.jsx";
 
 import Dashboard from "../../pages/dashboard/Dashboard";
 import Profile from "../../pages/profile/Profile";

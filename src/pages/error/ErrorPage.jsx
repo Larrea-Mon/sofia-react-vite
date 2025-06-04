@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import s from "./ErrorPage.module.scss";
 
 import errorImage from "../../assets/errorImage.svg"
-import FooterIcon from "../../components/Icons/FooterIcon.js";
+import FooterIcon from "../../components/Icons/FooterIcon.jsx";
 
 export default function ErrorPage() {
   return (
