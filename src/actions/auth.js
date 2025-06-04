@@ -2,7 +2,6 @@ import axios from "axios";
 import config from "../config";
 import jwt from "jsonwebtoken";
 import { toast } from "react-toastify";
-//import { push } from "connected-react-router";
 import Errors from "../components/FormItems/error/errors";
 import { mockUser } from "./mock.js";
 
@@ -118,7 +117,6 @@ export function loginUser(creds, navigate) {
     if (!config.isBackend) {
       dispatch(receiveToken('token', navigate));
       dispatch(doInit());
-      // dispatch(push('/app'));
       navigate('/template');
     } else {
       dispatch({

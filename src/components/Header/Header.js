@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   Navbar,
@@ -24,7 +23,6 @@ import MenuIcon from "../Icons/HeaderIcons/MenuIcon.js";
 import SearchBarIcon from "../Icons/HeaderIcons/SearchBarIcon.js";
 import BellIcon from "../Icons/HeaderIcons/BellIcon.js";
 import SearchIcon from "../Icons/HeaderIcons/SearchIcon.js";
-import { useNavigate } from "react-router-dom";
 
 import ProfileIcon from "../../assets/navbarMenus/pfofileIcons/ProfileIcon.js";
 import MessagesIcon from "../../assets/navbarMenus/pfofileIcons/MessagesIcon.js";
@@ -162,5 +160,5 @@ function mapStateToProps(store) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(Header));
+export default connect(mapStateToProps)(Header);
 

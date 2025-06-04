@@ -1,6 +1,6 @@
 import axios from "axios";
 import Errors from "../components/FormItems/error/errors";
-//import { push } from "connected-react-router";
+// Removed: import { push } from "connected-react-router";
 import { doInit } from "./auth";
 import { toast } from "react-toastify";
 import config from "../config";
@@ -13,7 +13,7 @@ const actions = {
     };
   },
 
-  doFind: (id) => async (dispatch) => {
+  doFind: (id, navigate) => async (dispatch) => {
     if (!config.isBackend) {
       dispatch({
         type: 'USERS_FORM_FIND_SUCCESS',
@@ -40,12 +40,12 @@ const actions = {
           type: 'USERS_FORM_FIND_ERROR',
         });
 
-        dispatch(push('/admin/users'));
+        if (navigate) navigate('/admin/users');
       }
     }
   },
 
-  doCreate: (values) => async (dispatch) => {
+  doCreate: (values, navigate) => async (dispatch) => {
     try {
       dispatch({
         type: 'USERS_FORM_CREATE_STARTED',
@@ -57,7 +57,7 @@ const actions = {
         });
 
         toast.success('User created');
-        dispatch(push('/admin/users'));
+        if (navigate) navigate('/admin/users');
       })
     } catch (error) {
       Errors.handle(error);
@@ -68,7 +68,7 @@ const actions = {
     }
   },
 
-  doUpdate: (id, values, isProfile) => async (
+  doUpdate: (id, values, isProfile, navigate) => async (
     dispatch,
     getState,
   ) => {
@@ -89,7 +89,7 @@ const actions = {
         toast.success('Profile updated');
       } else {
         toast.success('User updated');
-        dispatch(push('/admin/users'));
+        if (navigate) navigate('/admin/users');
       }
     } catch (error) {
       Errors.handle(error);
@@ -100,7 +100,7 @@ const actions = {
     }
   },
 
-  doChangePassword: ({newPassword, currentPassword}) => async (dispatch) => {
+  doChangePassword: ({newPassword, currentPassword}, navigate) => async (dispatch) => {
     try {
       dispatch({
         type: 'USERS_FORM_CREATE_STARTED',
@@ -111,7 +111,7 @@ const actions = {
       });
 
       toast.success('Password has been updated');
-      dispatch(push('/admin/users'));
+      if (navigate) navigate('/admin/users');
 
     } catch (error) {
       Errors.handle(error);

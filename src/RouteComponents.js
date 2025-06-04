@@ -1,41 +1,26 @@
 import React from "react";
 import { logoutUser } from "./actions/auth";
-import { Redirect, Route } from "react-router";
-import { useNavigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import hasToken from "./services/authService";
 
-export const AdminRoute = ({ currentUser, dispatch, component, ...rest }) => {
+export const AdminRoute = ({ currentUser, dispatch }) => {
   if (!currentUser || currentUser.role !== 'admin' || !hasToken()) {
-    return (<Redirect to="/template"/>)
-  } else if (currentUser && currentUser.role === 'admin') {
-    return (
-      <Route {...rest} render={props => (React.createElement(component, props))}/>
-    );
+    return <Navigate to="/template" replace />;
   }
+  return <Outlet />;
 };
 
-export const UserRoute = ({ dispatch, component, ...rest }) => {
-  const navigate = useNavigate();
+export const UserRoute = ({ currentUser, dispatch }) => {
   if (!hasToken()) {
-    dispatch(logoutUser(navigate));
-    return (<Redirect to="/login"/>)
-  } else {
-    return (
-      <Route {...rest} render={props => (React.createElement(component, props))}/>
-    );
+    if (dispatch) dispatch(logoutUser());
+    return <Navigate to="/login" replace />;
   }
+  return <Outlet />;
 };
 
-export const AuthRoute = ({ dispatch, component, ...rest }) => {
-  const { from } = rest.location.state || { from: { pathname: '/template'} };
-
+export const AuthRoute = ({ currentUser }) => {
   if (hasToken()) {
-    return (
-      <Redirect to={from} />
-    );
-  } else {
-    return (
-      <Route {...rest} render={props => (React.createElement(component, props))}/>
-    )
+    return <Navigate to="/template" replace />;
   }
-}
+  return <Outlet />;
+};
