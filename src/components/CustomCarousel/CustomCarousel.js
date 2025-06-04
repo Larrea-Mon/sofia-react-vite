@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   Button,
 } from "reactstrap";
-import Widget from "../Widget/Widget.js";
+import Widget from "../Widget/Widget.jsx";
 //import MobileStepper from '@material-ui/core/MobileStepper';
 import MobileStepper from '@mui/material/MobileStepper';
 //import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';

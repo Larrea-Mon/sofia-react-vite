@@ -3,7 +3,7 @@ import {
   Row,
   Col,
 } from 'reactstrap';
-import Widget from '../../../components/Widget/Widget.js';
+import Widget from '../../../components/Widget/Widget.jsx';
 import CustomAlert from "../../../components/CustomAlert/CustomAlert.js";
 import s from "./Alerts.module.scss";
 

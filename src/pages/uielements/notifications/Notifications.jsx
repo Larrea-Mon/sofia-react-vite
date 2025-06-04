@@ -7,7 +7,7 @@ import {
   Row,
   Button,
 } from "reactstrap";
-import Widget from "../../../components/Widget/Widget.js";
+import Widget from "../../../components/Widget/Widget.jsx";
 import Code from "../../../components/Code/Code.js";
 import Notification from "../../../components/Notification/Notification.js";
 import s from "./Notifications.module.scss";

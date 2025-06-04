@@ -4,7 +4,7 @@ import {
   Row,
   Table,
 } from 'reactstrap';
-import Widget from '../../../components/Widget/Widget.js';
+import Widget from '../../../components/Widget/Widget.jsx';
 
 export default function Grid() {
   return (

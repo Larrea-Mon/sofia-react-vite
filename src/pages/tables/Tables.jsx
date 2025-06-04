@@ -15,7 +15,7 @@ import {
   Label,
   Badge,
 } from "reactstrap";
-import Widget from "../../components/Widget/Widget.js";
+import Widget from "../../components/Widget/Widget.jsx";
 import TaskContainer from "./components/TaskContainer/TaskContainer.js";
 
 import cloudIcon from "../../assets/tables/cloudIcon.svg";

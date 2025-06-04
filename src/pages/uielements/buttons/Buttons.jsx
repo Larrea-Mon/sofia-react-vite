@@ -4,7 +4,7 @@ import {
   Row,
   Button,
 } from "reactstrap";
-import Widget from "../../../components/Widget/Widget.js";
+import Widget from "../../../components/Widget/Widget.jsx";
 import OutlineStar from "../../../assets/buttons/OutlineStarIcon.jsx";
 
 import s from "./Buttons.module.scss";

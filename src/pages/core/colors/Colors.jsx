@@ -6,7 +6,7 @@ import {
   Button,
 } from "reactstrap";
 import Dot from '../../../components/Dot/Dot.js';
-import Widget from '../../../components/Widget/Widget.js';
+import Widget from '../../../components/Widget/Widget.jsx';
 
 import mock from './mock.js';
 import s from './Colors.module.scss';

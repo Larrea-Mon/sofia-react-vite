@@ -4,7 +4,7 @@ import {
   Col,
   Row,
 } from "reactstrap";
-import Widget from "../../../components/Widget/Widget.js";
+import Widget from "../../../components/Widget/Widget.jsx";
 import ApexRadarChart from "./components/ApexRadarChart.js";
 import RechartsPieChart from "./components/RechartsPieChart.js";
 import ApexLineChart from "./components/ApexLineChart.js";

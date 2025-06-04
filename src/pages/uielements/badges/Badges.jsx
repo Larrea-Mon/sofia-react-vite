@@ -4,7 +4,7 @@ import {
   Row,
   Badge
 } from "reactstrap";
-import Widget from "../../../components/Widget/Widget.js";
+import Widget from "../../../components/Widget/Widget.jsx";
 import StarIcon from "../../../assets/badges/StarIcon.jsx";
 import s from "./Badges.module.scss";
 

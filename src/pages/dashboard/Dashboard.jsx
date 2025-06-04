@@ -11,7 +11,7 @@ import {
   DropdownItem,
   UncontrolledDropdown
 } from "reactstrap";
-import Widget from "../../components/Widget/Widget.js";
+import Widget from "../../components/Widget/Widget.jsx";
 import ApexActivityChart from "./components/ActivityChart.js";
 
 import meal1 from "../../assets/dashboard/meal-1.svg";
