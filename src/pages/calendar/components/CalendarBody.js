@@ -3,7 +3,6 @@ import FullCalendar from "@fullcalendar/react"
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactinPlugin from "@fullcalendar/interaction"
-//TODO desgargar estos
 import { Card, CardBody } from "reactstrap";
 
 const CalendarBody = props => {

@@ -15,12 +15,12 @@ import successIcon from "../../../assets/notifications/successIcon.svg";
 import closeIcon from "../../../assets/notifications/closeIcon.svg";
 
 const positions = [
-  toast.POSITION.TOP_LEFT,
-  toast.POSITION.TOP_CENTER,
-  toast.POSITION.TOP_RIGHT,
-  toast.POSITION.BOTTOM_LEFT,
-  toast.POSITION.BOTTOM_CENTER,
-  toast.POSITION.BOTTOM_RIGHT
+  "top-left",
+  "top-center",
+  "top-right",
+  "bottom-left",
+  "bottom-center",
+  "bottom-right"
 ];
 
 const notificationTypes = ["info", "success", "warning", "error"]

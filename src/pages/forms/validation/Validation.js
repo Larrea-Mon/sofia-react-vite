@@ -7,7 +7,7 @@ import {
   Label,
 } from 'reactstrap';
 import Widget from "../../../components/Widget/Widget";
-//import Formsy from "formsy-react";
+import Formsy from "formsy-react";
 import InputValidation from "../../../components/InputValidation/InputValidation";
 import FormikForm from "./formik/FormikForm";
 

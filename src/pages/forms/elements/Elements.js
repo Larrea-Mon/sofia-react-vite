@@ -7,7 +7,6 @@ import {
   Label,
   Input,
   InputGroup,
-  InputGroupAddon,
   Form,
   FormGroup,
   UncontrolledTooltip,
@@ -183,31 +182,31 @@ export default function Elements() {
                     <FormGroup row>
                       <Label md={3} className="text-md-right" for="prepended-input">Prepended input</Label>
                       <Col md={9}>
-                        <InputGroup>
-                          <InputGroupAddon addonType="prepend"><span className="input-group-text"><i className="fa fa-user" /></span></InputGroupAddon>
-                          <Input id="prepended-input" type="test" bsSize="16" placeholder="Username" />
-                        </InputGroup>
+                          <InputGroup>
+                            <span className="input-group-text"><i className="fa fa-user" /></span>
+                            <Input id="prepended-input" type="test" bsSize="16" placeholder="Username" />
+                          </InputGroup>
                       </Col>
                     </FormGroup>
                     <FormGroup row>
                       <Label md={3} className="text-md-right" for="password-field">Password</Label>
                       <Col md={9}>
-                        <InputGroup>
-                          <InputGroupAddon addonType="prepend"><span className="input-group-text"><i className="fa fa-lock" /></span></InputGroupAddon>
-                          <Input
-                            id="password-field" type="password"
-                            placeholder="Password"
-                          />
-                        </InputGroup>
+                          <InputGroup>
+                            <span className="input-group-text"><i className="fa fa-lock" /></span>
+                            <Input
+                              id="password-field" type="password"
+                              placeholder="Password"
+                            />
+                          </InputGroup>
                       </Col>
                     </FormGroup>
                     <FormGroup row>
                       <Label md={3} className="text-md-right" for="appended-input">Appended input</Label>
                       <Col md={9}>
-                        <InputGroup>
-                          <Input id="appended-input" bsSize="16" type="text" />
-                          <InputGroupAddon addonType="append">.00</InputGroupAddon>
-                        </InputGroup>
+                          <InputGroup>
+                            <Input id="appended-input" bsSize="16" type="text" />
+                            <span className="input-group-text">.00</span>
+                          </InputGroup>
                       </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -215,11 +214,11 @@ export default function Elements() {
                         Combined
                       </Label>
                       <Col md={9}>
-                        <InputGroup>
-                          <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-                          <Input id="combined-input" bsSize="16" type="text" />
-                          <InputGroupAddon addonType="append">.00</InputGroupAddon>
-                        </InputGroup>
+                          <InputGroup>
+                            <span className="input-group-text">$</span>
+                            <Input id="combined-input" bsSize="16" type="text" />
+                            <span className="input-group-text">.00</span>
+                          </InputGroup>
                       </Col>
                     </FormGroup>
                     <FormGroup row className="mb-0">
@@ -227,10 +226,10 @@ export default function Elements() {
                         Append Transparent
                       </Label>
                       <Col md={9}>
-                        <InputGroup className="input-group-transparent">
-                          <Input id="transparent-input" type="text" />
-                          <InputGroupAddon addonType="append"><span className="input-group-text"><i className="fa fa-camera" /></span></InputGroupAddon>
-                        </InputGroup>
+                          <InputGroup className="input-group-transparent">
+                            <Input id="transparent-input" type="text" />
+                            <span className="input-group-text"><i className="fa fa-camera" /></span>
+                          </InputGroup>
                       </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -258,9 +257,9 @@ export default function Elements() {
                           </Label>
                           <InputGroup>
                             <Input type="text" id="search-input1" />
-                            <InputGroupAddon addonType="append">
+                            <span className="input-group-text p-0 border-0 bg-transparent">
                               <Button color="default">Search</Button>
-                            </InputGroupAddon>
+                            </span>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -269,13 +268,13 @@ export default function Elements() {
                           </Label>
                           <InputGroup>
                             <Input type="text" id="bar" />
-                            <InputGroupAddon addonType="append">
+                            <span className="input-group-text p-0 border-0 bg-transparent">
                               <ButtonGroup>
                                 <Button color="secondary-red" className="px-3 border-radius-0"><i className={`fa fa-pencil ${s.btnIcon}`} /></Button>
                                 <Button color="secondary-yellow" className="px-3"><i className={`fa fa-plus ${s.btnIcon}`} /></Button>
                                 <Button color="success" className="px-3"><i className={`fa fa-refresh ${s.btnIcon}`} /></Button>
                               </ButtonGroup>
-                            </InputGroupAddon>
+                            </span>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -284,7 +283,7 @@ export default function Elements() {
                           </Label>
                           <InputGroup>
                             <Input type="text" id="dropdown-appended" />
-                            <InputGroupAddon addonType="append">
+                            <span className="input-group-text p-0 border-0 bg-transparent">
                               <UncontrolledButtonDropdown>
                                 <DropdownToggle caret color="success" className="border-radius-left-0">
                                   Action
@@ -297,7 +296,7 @@ export default function Elements() {
                                   <DropdownItem>Separated link</DropdownItem>
                                 </DropdownMenu>
                               </UncontrolledButtonDropdown>
-                            </InputGroupAddon>
+                            </span>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -306,7 +305,7 @@ export default function Elements() {
                           </Label>
                           <InputGroup>
                             <Input type="text" id="segmented-dropdown" />
-                            <InputGroupAddon addonType="append">
+                            <span className="input-group-text p-0 border-0 bg-transparent">
                               <UncontrolledButtonDropdown>
                                 <Button color="warning" className="border-radius-left-0 px-3">Action</Button>
                                 <DropdownToggle
@@ -321,7 +320,7 @@ export default function Elements() {
                                   <DropdownItem>Separated link</DropdownItem>
                                 </DropdownMenu>
                               </UncontrolledButtonDropdown>
-                            </InputGroupAddon>
+                            </span>
                           </InputGroup>
                           <span className="label muted">Anything can be appended to the right</span>
                         </FormGroup>
@@ -331,7 +330,7 @@ export default function Elements() {
                           </Label>
                           <InputGroup>
                             <Input type="text" id="type-dropdown-appended" />
-                            <InputGroupAddon addonType="append">
+                            <span className="input-group-text p-0 border-0 bg-transparent">
                               <UncontrolledButtonDropdown>
                                 <DropdownToggle
                                   caret color="primary"
@@ -351,7 +350,7 @@ export default function Elements() {
                                   </DropdownItem>
                                 </DropdownMenu>
                               </UncontrolledButtonDropdown>
-                            </InputGroupAddon>
+                            </span>
                           </InputGroup>
                           <span className="label muted">
                             You can select some type of a field just right in the place.
@@ -444,20 +443,18 @@ export default function Elements() {
                               id="colorpicker"
                               value={inputColor}
                             />
-                            <InputGroupAddon addonType="append">
-                              <span className="input-group-text p-0 border-0 bg-transparent">
-                                <SketchPicker
-                                  color={color}
-                                  onChangeComplete={(c) => {
-                                    setColor(c.hex);
-                                    setInputColor(c.hex);
-                                  }}
-                                  disableAlpha
-                                  presetColors={["#FF5668", "#36cfc9", "#f6e58d", "#7ed6df", "#e17055", "#00b894"]}
-                                  styles={{ default: { picker: { boxShadow: 'none' } } }}
-                                />
-                              </span>
-                            </InputGroupAddon>
+                            <span className="input-group-text p-0 border-0 bg-transparent">
+                              <SketchPicker
+                                color={color}
+                                onChangeComplete={(c) => {
+                                  setColor(c.hex);
+                                  setInputColor(c.hex);
+                                }}
+                                disableAlpha
+                                presetColors={["#FF5668", "#36cfc9", "#f6e58d", "#7ed6df", "#e17055", "#00b894"]}
+                                styles={{ default: { picker: { boxShadow: 'none' } } }}
+                              />
+                            </span>
                           </InputGroup>
                         </Label>
                       </FormGroup>
@@ -775,26 +772,20 @@ export default function Elements() {
                   </div>
                   <FormGroup>
                     <InputGroup>
-                      <InputGroupAddon addonType="prepend">
-                        <span className="input-group-text"><i className="fa fa-github"></i></span>
-                      </InputGroupAddon>
+                      <span className="input-group-text"><i className="fa fa-github"></i></span>
                       <Input type="text" placeholder="Login" />
                     </InputGroup>
                   </FormGroup>
                   <FormGroup>
                     <InputGroup>
-                      <InputGroupAddon addonType="prepend">
-                        <span className="input-group-text"><i className="fa fa-eye-slash"></i></span>
-                      </InputGroupAddon>
+                      <span className="input-group-text"><i className="fa fa-eye-slash"></i></span>
                       <Input className="bg-light-gray" type="password" placeholder="Password" />
                     </InputGroup>
                   </FormGroup>
                   <FormGroup>
                     <InputGroup>
                       <Input type="text" placeholder="Phone" />
-                      <InputGroupAddon addonType="prepend">
-                        <span className="bg-primary text-white input-group-text"><i className="fa fa-phone" /></span>
-                      </InputGroupAddon>
+                      <span className="bg-primary text-white input-group-text"><i className="fa fa-phone" /></span>
                     </InputGroup>
                   </FormGroup>
                 </Form>

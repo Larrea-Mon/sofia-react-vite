@@ -5,9 +5,9 @@ import {
   Button,
   FormGroup,
   Label,
-  Jumbotron,
 } from 'reactstrap';
-//import Formsy from "formsy-react";
+import Jumbotron from '../../uielements/jumbotron/Jumbotron';
+import Formsy from "formsy-react";
 import Select from "react-select";
 import InputMask from "react-input-mask"; // <-- updated import
 import { selectCountriesData, selectShipmentData, cardTypesData } from "./data";
@@ -156,7 +156,7 @@ const StepsComponents = {
   },
   Step4: function Step4() {
     return (
-      <Jumbotron className="bg-transparent">
+      <div className="p-5 mb-4 bg-transparent rounded-3">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <h1 className="display-flex align-items-center mt-2 text-white">
             Thank you!
@@ -167,7 +167,7 @@ const StepsComponents = {
             In your mailbox you will find the invoice for your purchase.
           </div>
         </div>
-      </Jumbotron>
+      </div>
     )
   }
 }

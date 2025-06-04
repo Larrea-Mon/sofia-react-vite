@@ -7,7 +7,6 @@ import {
   Input,
   FormGroup,
   InputGroup,
-  InputGroupAddon,
   NavbarToggler,
   Nav,
   NavItem,
@@ -127,12 +126,10 @@ export default function Navbars() {
                       <Form className="d-none d-sm-block" inline>
                         <FormGroup>
                           <InputGroup>
-                            <Input id="search-input" placeholder="Search Dashboard" className="focus no-border"/>
-                            <InputGroupAddon addonType="prepend">
-                              <a className="d-flex align-self-center px-3" >
-                                <SearchBarIcon/>
-                              </a>
-                            </InputGroupAddon>
+                          <Input id="search-input" placeholder="Search Dashboard" className="focus no-border"/>
+                            <span className="input-group-text d-flex align-self-center px-3" style={{ background: 'none', border: 'none' }}>
+                              <SearchBarIcon/>
+                            </span>
                           </InputGroup>
                         </FormGroup>
                       </Form>

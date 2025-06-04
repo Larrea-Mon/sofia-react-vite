@@ -1,5 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
+import HighchartsReact from "highcharts-react-official";
+import Widget from "../../../components/Widget/Widget";
+import s from "./BarCharts.module.scss";
+import chartsData from "./mock";
 import {
   Row,
   Col,
@@ -21,14 +25,14 @@ import {
   ReferenceLine,
   ResponsiveContainer
 } from 'recharts';
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-import HighchartMore from "highcharts/highcharts-more";
-import Widget from "../../../components/Widget/Widget";
-import s from "./BarCharts.module.scss";
-import chartsData from "./mock";
 
-HighchartMore(Highcharts);
+import "highcharts/highcharts-more";
+import Highcharts from "highcharts";
+
+// Import Highcharts More as a side effect for compatibility with ESM/Webpack
+
+
+
 
 export default function BarCharts() {
 
@@ -42,11 +46,11 @@ export default function BarCharts() {
   }
 
   return (
-    <Widget className="charts-tabs-widget" style={{overflow: "auto"}}>
+    <Widget className="charts-tabs-widget" style={{ overflow: "auto" }}>
       <Nav tabs className="mb-5">
         <NavItem>
           <NavLink
-            className={classnames({active: activeTab === 1})}
+            className={classnames({ active: activeTab === 1 })}
             onClick={() => toggleTab(1)}
           >
             <div className="headline-3">Apex Charts</div>
@@ -54,7 +58,7 @@ export default function BarCharts() {
         </NavItem>
         <NavItem>
           <NavLink
-            className={classnames({active: activeTab === 2})}
+            className={classnames({ active: activeTab === 2 })}
             onClick={() => toggleTab(2)}
           >
             <div className="headline-3">Recharts</div>
@@ -62,7 +66,7 @@ export default function BarCharts() {
         </NavItem>
         <NavItem>
           <NavLink
-            className={classnames({active: activeTab === 3})}
+            className={classnames({ active: activeTab === 3 })}
             onClick={() => toggleTab(3)}
           >
             <div className="headline-3">Highcharts</div>

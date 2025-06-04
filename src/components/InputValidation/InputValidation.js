@@ -1,5 +1,5 @@
 import React from 'react';
-//import { withFormsy } from 'formsy-react';
+import { withFormsy } from 'formsy-react';
 
 const InputValidation = (props) => {
 

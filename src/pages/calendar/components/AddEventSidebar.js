@@ -1,20 +1,11 @@
 import React, { Fragment, useState } from "react";
 
+
 import classnames from "classnames";
 import Flatpickr from "react-flatpickr";
 import Select, { components } from "react-select";
 import { useForm } from "react-hook-form";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  FormGroup,
-  Label,
-  CustomInput,
-  Input,
-  Form,
-} from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label, Input, Form } from "reactstrap";
 
 import "eva-icons/style/eva-icons.css";
 
@@ -65,7 +56,7 @@ const AddEventSidebar = props => {
     { value: 'Jane Cooper', label: 'Jane Cooper', avatar: img4 },
   ]
 
-  const OptionComponent = ({ data, ...props}) => {
+  const OptionComponent = ({ data, ...props }) => {
     return (
       <components.Option {...props}>
         <div className={`bullet bullet-${data.color} bullet-sm mr-2`}></div>
@@ -78,7 +69,7 @@ const AddEventSidebar = props => {
     return (
       <components.Option {...props}>
         <div className="d-flex flex-wrap align-items-center">
-          <img className="avatar mr-2" src={data.avatar} alt="user"/>
+          <img className="avatar mr-2" src={data.avatar} alt="user" />
           <div>{data.label}</div>
         </div>
       </components.Option>
@@ -146,14 +137,14 @@ const AddEventSidebar = props => {
   const updateEventInCalendar = (updatedEventData, propsToUpdate, extendedPropsToUpdate) => {
     const existingEvent = calendarApi.getEventById(updatedEventData.id)
 
-    for (let index = 0; index < propsToUpdate.length; index ++) {
+    for (let index = 0; index < propsToUpdate.length; index++) {
       const propName = propsToUpdate[index]
       existingEvent.setProp(propName, updatedEventData[propName])
     }
 
     existingEvent.setDates(updatedEventData.star, updatedEventData.end, { allDay: updatedEventData.allDay })
 
-    for (let index = 0; index < extendedPropsToUpdate.length; index ++) {
+    for (let index = 0; index < extendedPropsToUpdate.length; index++) {
       const propName = extendedPropsToUpdate[index]
       existingEvent.setExtendedProp(propName, updatedEventData.extendedProps[propName])
     }
@@ -218,7 +209,7 @@ const AddEventSidebar = props => {
     }
   }
 
-  const CloseBtn = <i className="eva eva-close cursor-pointer" onClick={handleAddEventSidebar}/>
+  const CloseBtn = <i className="eva eva-close cursor-pointer" onClick={handleAddEventSidebar} />
 
   return (
     <Modal
@@ -311,16 +302,15 @@ const AddEventSidebar = props => {
               }}
             />
           </FormGroup>
-          <FormGroup>
-            <CustomInput
-              type='switch'
-              id='allDay'
-              name='customSwitch'
-              label='All Day'
+          <FormGroup check className="mb-3">
+            <Input
+              type="switch"
+              id="allDay"
+              name="allDay"
               checked={allDay}
               onChange={e => setAllDay(e.target.checked)}
-              inline
             />
+            <Label for="allDay" check className="ml-2">All Day</Label>
           </FormGroup>
           <FormGroup>
             <Label for='eventURL'>Event URL</Label>
