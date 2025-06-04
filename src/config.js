@@ -18,7 +18,7 @@ const config = {
   portApi,
   baseURLApi,
   remote: "https://sing-generator-node.herokuapp.com",
-  isBackend: process.env.REACT_APP_BACKEND,
+  isBackend: import.meta.env.VITE_BACKEND,
   auth: {
     email: 'admin@flatlogic.com',
     password: 'password'

@@ -5,10 +5,9 @@
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=true npm run build",
-    "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='./' node --max_old_space_size=8192 ./node_modules/.bin/react-app-rewired --openssl-legacy-provider build",
-    "start": "react-app-rewired --openssl-legacy-provider start",
-    "test": "react-app-rewired --openssl-legacy-provider test",
-    "start:backend": "cross-env REACT_APP_BACKEND=true react-app-rewired --openssl-legacy-provider start"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.40",
@@ -62,7 +61,6 @@
     "rc-hammerjs": "^0.6.10",
     "react": "^18.3.1",
     "react-apexcharts": "^1.7.0",
-    "react-app-rewired": "^2.2.1",
     "react-big-calendar": "^1.19.2",
     "react-color": "^2.19.3",
     "react-datepicker": "^8.4.0",
@@ -75,7 +73,6 @@
     "react-router": "^7.6.1",
     "react-router-dom": "^7.6.1",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "^5.0.1",
     "react-select": "^5.10.1",
     "react-swipeable": "^7.0.2",
     "react-syntax-highlighter": "^15.6.1",
@@ -96,7 +93,6 @@
     "uuid": "^8.3.2",
     "vm-browserify": "^1.1.2",
     "web-vitals": "^5.0.2",
-    "webpack": "^5.99.9",
     "yup": "^1.6.1"
   },
   "eslintConfig": {
@@ -121,6 +117,7 @@
     "node": "^20.15"
   },
   "devDependencies": {
-    "webpack-bundle-analyzer": "^4.10.2"
+    "@vitejs/plugin-react": "^4.5.1",
+    "vite": "^6.3.5"
   }
 }

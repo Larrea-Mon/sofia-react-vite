@@ -4,10 +4,10 @@ import {createRoot} from "react-dom/client";
 import { createStore, applyMiddleware, compose } from "redux";
 import { thunk } from "redux-thunk";
 import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 import axios from "axios";
 
-import App from './App';
+import App from './App.jsx';
 import config from './config';
 import createRootReducer from './reducers';
 
@@ -49,8 +49,5 @@ root.render(
     </Provider>
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
 
+// Service worker is not supported in Vite by default. If needed, use Vite plugins for PWA support.

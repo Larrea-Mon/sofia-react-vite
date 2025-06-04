@@ -23,9 +23,9 @@ import SearchBarIcon from "../Icons/HeaderIcons/SearchBarIcon.js";
 import BellIcon from "../Icons/HeaderIcons/BellIcon.js";
 import SearchIcon from "../Icons/HeaderIcons/SearchIcon.js";
 
-import ProfileIcon from "../../assets/navbarMenus/pfofileIcons/ProfileIcon.js";
-import MessagesIcon from "../../assets/navbarMenus/pfofileIcons/MessagesIcon.js";
-import TasksIcon from "../../assets/navbarMenus/pfofileIcons/TasksIcon.js";
+import ProfileIcon from "../../assets/navbarMenus/pfofileIcons/ProfileIcon.jsx";
+import MessagesIcon from "../../assets/navbarMenus/pfofileIcons/MessagesIcon.jsx";
+import TasksIcon from "../../assets/navbarMenus/pfofileIcons/TasksIcon.jsx";
 
 import logoutIcon from "../../assets/navbarMenus/pfofileIcons/logoutOutlined.svg";
 import basketIcon from "../../assets/navbarMenus/basketIcon.svg";

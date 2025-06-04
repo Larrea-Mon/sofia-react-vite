@@ -5,7 +5,7 @@ import {
   Badge
 } from "reactstrap";
 import Widget from "../../../components/Widget/Widget.js";
-import StarIcon from "../../../assets/badges/StarIcon.js";
+import StarIcon from "../../../assets/badges/StarIcon.jsx";
 import s from "./Badges.module.scss";
 
 export default function Badges() {

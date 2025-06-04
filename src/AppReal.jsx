@@ -4,10 +4,10 @@ import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { AdminRoute, UserRoute, AuthRoute } from "./RouteComponents.js";
 
-import ErrorPage from "./pages/error/ErrorPage.js";
-import LayoutComponent from "./components/Layout/Layout.js";
-import Login from "./pages/auth/login/Login.js";
-import Register from "./pages/auth/register/Register.js";
+import ErrorPage from "./pages/error/ErrorPage.jsx";
+import LayoutComponent from "./components/Layout/Layout.jsx";
+import Login from "./pages/auth/login/Login.jsx";
+import Register from "./pages/auth/register/Register.jsx";
 import DocumentationLayout from "./documentation/DocumentationLayout.js";
 
 import "./styles/app.scss";
