@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Collapse, Badge } from "reactstrap";
 import { Route } from "react-router";
 import classnames from "classnames";
@@ -8,6 +8,7 @@ import classnames from "classnames";
 import s from "./LinksGroup.module.scss";
 
 const LinksGroup = (props) => {
+  const location = useLocation();
 
   const {
     link = "",
@@ -22,15 +23,21 @@ const LinksGroup = (props) => {
     ...restProps
   } = props;
 
-  const [headerLinkClicked, setHeaderLinkClicked] = useState(true)
+  const [headerLinkClicked, setHeaderLinkClicked] = useState(true);
 
   const togglePanelCollapse = (link, e) => {
     props.onActiveSidebarItemChange(link);
-    setHeaderLinkClicked(!headerLinkClicked || (props.activeItem && !props.activeItem.includes(props.index)));
+    setHeaderLinkClicked(
+      !headerLinkClicked ||
+        (props.activeItem && !props.activeItem.includes(props.index))
+    );
     e.preventDefault();
-  }
+  };
 
-  const isOpen = props.activeItem && props.activeItem.includes(props.index) && headerLinkClicked;
+  const isOpen =
+    props.activeItem &&
+    props.activeItem.includes(props.index) &&
+    headerLinkClicked;
 
   if (!props.childrenLinks) {
     if (props.isHeader) {
@@ -42,12 +49,18 @@ const LinksGroup = (props) => {
             exact={exact}
             target={props.target}
           >
-            <span className={s.icon}>
-              {props.iconName}
-            </span>
+            <span className={s.icon}>{props.iconName}</span>
             {props.header}
-            {props.label && <sup className={`text-${props.labelColor || 'warning'}`}>{props.label}</sup> }
-            {props.badge && <Badge className={s.badge} color="secondary-red" pill>{props.badge}</Badge>}
+            {props.label && (
+              <sup className={`text-${props.labelColor || "warning"}`}>
+                {props.label}
+              </sup>
+            )}
+            {props.badge && (
+              <Badge className={s.badge} color="secondary-red" pill>
+                {props.badge}
+              </Badge>
+            )}
           </NavLink>
         </li>
       );
@@ -58,13 +71,13 @@ const LinksGroup = (props) => {
           to={props.link}
           activeClassName={s.headerLinkActive}
           onClick={(e) => {
-            if (props.link.includes('menu')) {
+            if (props.link.includes("menu")) {
               e.preventDefault();
             }
           }}
           exact={exact}
         >
-          {<i className="fa fa-circle text-primary mr-2"/>} {props.header}
+          {<i className="fa fa-circle text-primary mr-2" />} {props.header}
         </NavLink>
       </li>
     );
@@ -76,33 +89,37 @@ const LinksGroup = (props) => {
       children={(params) => {
         return (
           <li className={classnames({ [s.headerLink]: props.isHeader }, props.className)}>
-            <a className={classnames("d-flex", { [s.collapsed]: isOpen })}
-               onClick={(e) => togglePanelCollapse(props.link, e)}
-               href="#top"
+            <a
+              className={classnames("d-flex", { [s.collapsed]: isOpen })}
+              onClick={(e) => togglePanelCollapse(props.link, e)}
+              href="#top"
             >
-              {props.isHeader
-                ? <span className={s.icon}>
-                  {props.iconName}
-                </span>
-                : null
-              }
-              {props.header} {props.label && <sup className={`text-${props.labelColor || "warning"} ml-1`}>{props.label}</sup>}
+              {props.isHeader ? (
+                <span className={s.icon}>{props.iconName}</span>
+              ) : null}
+              {props.header}{" "}
+              {props.label && (
+                <sup className={`text-${props.labelColor || "warning"} ml-1`}>
+                  {props.label}
+                </sup>
+              )}
               <b className={["fa fa-angle-right", s.caret].join(" ")} />
             </a>
             <Collapse className={s.panel} isOpen={isOpen}>
               <ul>
-                {props.childrenLinks && props.childrenLinks.map((child, ind) =>
-                  <LinksGroup
-                    onActiveSidebarItemChange={props.onActiveSidebarItemChange}
-                    activeItem={props.activeItem}
-                    header={child.header}
-                    link={child.link}
-                    index={child.index}
-                    childrenLinks={child.childrenLinks}
-                    deep={props.deep + 1}
-                    key={ind}
-                  />,
-                )}
+                {props.childrenLinks &&
+                  props.childrenLinks.map((child, ind) => (
+                    <LinksGroup
+                      onActiveSidebarItemChange={props.onActiveSidebarItemChange}
+                      activeItem={props.activeItem}
+                      header={child.header}
+                      link={child.link}
+                      index={child.index}
+                      childrenLinks={child.childrenLinks}
+                      deep={props.deep + 1}
+                      key={ind}
+                    />
+                  ))}
               </ul>
             </Collapse>
           </li>
@@ -110,8 +127,7 @@ const LinksGroup = (props) => {
       }}
     />
   );
-
-}
+};
 
 LinksGroup.propTypes = {
   header: PropTypes.node.isRequired,
@@ -128,6 +144,6 @@ LinksGroup.propTypes = {
   onActiveSidebarItemChange: PropTypes.func,
   labelColor: PropTypes.string,
   exact: PropTypes.bool,
-}
+};
 
-export default withRouter(LinksGroup);
+export default LinksGroup;

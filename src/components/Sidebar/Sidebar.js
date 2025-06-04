@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-//import { withRouter } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import cn from "classnames";
 import s from "./Sidebar.module.scss";
 import LinksGroup from "./LinksGroup/LinksGroup";
@@ -10,7 +10,7 @@ import SofiaLogo from "../Icons/SofiaLogo.js";
 import "eva-icons/style/eva-icons.css";
 
 const Sidebar = (props) => {
-
+  const location = useLocation();
   const {
     activeItem = "",
     ...restProps
@@ -267,7 +267,7 @@ Sidebar.propTypes = {
   activeItem: PropTypes.string,
   location: PropTypes.shape({
     pathname: PropTypes.string,
-  }).isRequired
+  })
 }
 
 function mapStateToProps(store) {
@@ -277,4 +277,10 @@ function mapStateToProps(store) {
   };
 };
 
-export default withRouter(connect(mapStateToProps)(Sidebar));
+const ConnectedSidebar = connect(mapStateToProps)(Sidebar);
+
+// Export a wrapper that injects location via hook
+export default function SidebarWithLocation(props) {
+  const location = useLocation();
+  return <ConnectedSidebar {...props} location={location} />;
+}

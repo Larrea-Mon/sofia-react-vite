@@ -3,6 +3,7 @@ import { Row, Col, Breadcrumb, BreadcrumbItem, Button, Container} from 'reactstr
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 //import ColorPiker from 'rc-color-picker';
+import { SketchPicker } from 'react-color';
 import Select from 'react-select';
 //import MaskedInput from 'react-maskedinput'
 import InputMask from 'react-input-mask'; // <-- updated import
@@ -192,9 +193,9 @@ export default class Libs extends Component {
                     <Container id="Rc-color-picker" className="my-4">
                         <h3>Rc-color-picker</h3>
                         <p>Color piker component for React</p>
-                        <ColorPiker/>
+                        <SketchPicker />
                         <SyntaxHighlighter language='javascript'
-                                           style={tomorrow}>{'<ColorPiker />'}</SyntaxHighlighter>
+                                           style={tomorrow}>{'<SketchPicker />'}</SyntaxHighlighter>
                         <p>For more examples and documentation please refer to <a
                             href="https://github.com/react-component/color-picker" target="_blank" rel="noopener noreferrer">Color Picker</a></p>
                     </Container>
