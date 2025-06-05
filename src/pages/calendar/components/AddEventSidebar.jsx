@@ -30,7 +30,7 @@ const AddEventSidebar = props => {
   } = props
 
   const selectedEvent = store.selectedEvent
-  const { register, errors, handleSubmit } = useForm()
+  const { register, handleSubmit, formState: { errors } } = useForm()
 
   const [url, setUrl] = useState('')
   const [desc, setDesc] = useState('')
@@ -249,7 +249,7 @@ const AddEventSidebar = props => {
               placeholder='Title'
               value={title}
               onChange={e => setTitle(e.target.value)}
-              innerRef={register({ register: true, validate: value => value !== '' })}
+              {...register('title', { validate: value => value !== '' })}
               className={classnames({
                 'is-invalid': errors.title
                 // add extended bootstrap class for show invalid field value

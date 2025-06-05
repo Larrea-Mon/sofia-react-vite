@@ -63,7 +63,7 @@ const Calendar = () => {
   return (
     <Fragment>
       <div className="app-calendar overflow-hidden">
-        <Row noGutters>
+        <Row className="g-0">
 
           <Col className="position-relative mr-3">
             <CalendarBody

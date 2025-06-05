@@ -7,3 +7,10 @@ When you're ready to add backend integration, you can:
 - Ensure your backend API is running and accessible
 - The login form will then POST credentials to /auth/signin/local and only succeed with valid credentials
 If you need help wiring up the backend or want to add temporary frontend credential checks for demo/dev, just let me know!
+
+
+
+localStorage.removeItem('token');
+localStorage.removeItem('user');
+window.location.reload();
+

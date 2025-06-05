@@ -20,12 +20,12 @@ const IconContainer = styled('div')(({ theme }) => ({
 }));
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-  [`&.${StepConnector.classes.active}`]: {
+  ['&.Mui-active']: {
     '& .MuiStepConnector-line': {
       backgroundColor: '#4D53E0',
     },
   },
-  [`&.${StepConnector.classes.completed}`]: {
+  ['&.Mui-completed']: {
     '& .MuiStepConnector-line': {
       backgroundColor: '#4D53E0',
     },

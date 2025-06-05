@@ -60,7 +60,7 @@ const Sidebar = (props) => {
               header: 'My Profile', link: '/template/user/profile',
             },
             {
-              header: 'User Management', link: '/admin/users',
+              header: 'User Management', link: 'admin/users',
             },
             {
               header: 'Edit Profile', link: '/template/edit_profile',

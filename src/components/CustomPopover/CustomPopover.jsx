@@ -1,25 +1,60 @@
+
 import React, { useState } from "react";
-import {
-  Button,
-  Popover,
-  PopoverHeader,
-  PopoverBody,
-} from 'reactstrap';
+import Button from '@mui/material/Button';
+import Popover from '@mui/material/Popover';
+import styles from './CustomPopover.module.scss';
 
 export default function CustomPopover(props) {
 
-  const [popoverOpen, setPopoverOpen] = useState(false);
-  const toggle = () => setPopoverOpen(!popoverOpen);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? props.id : undefined;
+
+  // Map placement prop to MUI anchorOrigin/transformOrigin
+  const placementMap = {
+    top: { anchorOrigin: { vertical: 'top', horizontal: 'center' }, transformOrigin: { vertical: 'bottom', horizontal: 'center' } },
+    bottom: { anchorOrigin: { vertical: 'bottom', horizontal: 'center' }, transformOrigin: { vertical: 'top', horizontal: 'center' } },
+    left: { anchorOrigin: { vertical: 'center', horizontal: 'left' }, transformOrigin: { vertical: 'center', horizontal: 'right' } },
+    right: { anchorOrigin: { vertical: 'center', horizontal: 'right' }, transformOrigin: { vertical: 'center', horizontal: 'left' } },
+  };
+  const placement = placementMap[props.placement] || placementMap.top;
 
   return (
     <div className={props.className}>
-      <Button color={props.color} disabled={props.disabled} outline={props.outline} id={props.id} type="button">
+      <Button
+        className={styles.popoverButton}
+        variant={props.outline ? 'outlined' : 'contained'}
+        color={props.color || 'primary'}
+        disabled={props.disabled}
+        id={props.id}
+        onClick={handleClick}
+        type="button"
+      >
         {props.btnLabel}
       </Button>
-      <Popover placement={props.placement} isOpen={popoverOpen} target={props.id} toggle={toggle}>
-        <PopoverHeader>Popover Title</PopoverHeader>
-        <PopoverBody>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</PopoverBody>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={placement.anchorOrigin}
+        transformOrigin={placement.transformOrigin}
+        PaperProps={{ className: styles.popoverContent }}
+      >
+        <div>
+          <div className={styles.popoverTitle}>Popover Title</div>
+          <div>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</div>
+        </div>
       </Popover>
     </div>
-  )
+  );
 }

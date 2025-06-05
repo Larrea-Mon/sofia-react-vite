@@ -194,11 +194,12 @@ export default function Profile() {
               <Widget className="widget-p-md">
                 <div className="headline-3">Earning</div>
                 <div className="text-center">
-                  <ApexCharts
-                    series={apexLineChart.series}
-                    options={apexLineChart.options}
-                    height={250}
-                  />
+                <ApexCharts
+                  series={apexLineChart.series}
+                  options={apexLineChart.options}
+                  height={250}
+                  type="line"
+                />
                   <Button color="secondary-red" className="btn-rounded mt-3">View Analytics</Button>
                 </div>
               </Widget>

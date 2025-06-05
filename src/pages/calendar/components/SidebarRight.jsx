@@ -48,11 +48,10 @@ const SidebarRight = props => {
             {filters.length &&
             filters.map(filter => {
               return (
-                <div className={`form-check checkbox checkbox-${filter.color}`}>
+                <div className={`form-check checkbox checkbox-${filter.color}`} key={filter.label}>
                   <input
                     id={filter.label}
                     type="checkbox"
-                    key={filter.label}
                     label={filter.label}
                     checked={store.selectedCalendars.includes(filter.label)}
                     className={filter.className}
