@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:color';
 ///////// Navbar //////////
 .header-navbar {
   padding: $navbar-padding;
@@ -208,25 +211,25 @@ grid-col-padding {
 }
 
 @each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
+  .btn-outline-#{"#{ $color }"} {
     @include button-outline-variant($value);
   }
 }
 
 @each $color, $value in $theme-colors {
-  .btn-#{$color} {
+  .btn-#{"#{ $color }"} {
     @include button-variant($value);
   }
 }
 
 @each $color, $value in $theme-colors {
-  .bg-light-#{$color} {
+  .bg-light-#{"#{ $color }"} {
     @include bg-light($value);
   }
 }
 
 @each $color, $value in $theme-colors {
-  .bullet-#{$color} {
+  .bullet-#{"#{ $color }"} {
     @include bullet($value);
   }
 }
@@ -624,7 +627,7 @@ a.badge {
 }
 
 @each $color, $value in $theme-colors {
-  .badge-inverse-#{$color} {
+  .badge-inverse-#{"#{ $color }"} {
     @include badge-inverse($value);
   }
 }
@@ -685,7 +688,7 @@ a.badge {
 }
 
 @each $color, $value in $theme-colors {
-  .checkbox-#{$color} input[type='checkbox']:checked + label::before {
+  .checkbox-#{"#{ $color }"} input[type='checkbox']:checked + label::before {
     @include checkbox($value);
   }
 }
@@ -804,52 +807,52 @@ input[type='checkbox'] .styled:checked + label::after {
 }
 
 .alert-success {
-  background: theme-color('success');
+  background: map.get($theme-colors, success);
   color: $white;
 
   &.alert-transparent {
-    color: theme-color('success');
-    background: rgba(theme-color('success'), $alert-transparent);
+    color: map.get($theme-colors, success);
+    background: rgba(map.get($theme-colors, success), $alert-transparent);
   }
 }
 
 .alert-info {
-  background: theme-color('info');
+  background: map.get($theme-colors, info);
   color: $white;
 
   &.alert-transparent {
-    color: theme-color('info');
-    background: rgba(theme-color('info'), $alert-transparent);
+    color: map.get($theme-colors, info);
+    background: rgba(map.get($theme-colors, info), $alert-transparent);
   }
 }
 
 .alert-warning {
-  background: theme-color('warning');
+  background: map.get($theme-colors, warning);
   color: $white;
 
   &.alert-transparent {
-    color: theme-color('warning');
-    background: rgba(theme-color('warning'), $alert-transparent);
+    color: map.get($theme-colors, warning);
+    background: rgba(map.get($theme-colors, warning), $alert-transparent);
   }
 }
 
 .alert-danger {
-  background: theme-color('danger');
+  background: map.get($theme-colors, danger);
   color: $white;
 
   &.alert-transparent {
-    color: theme-color('danger');
-    background: rgba(theme-color('danger'), $alert-transparent);
+    color: map.get($theme-colors, danger);
+    background: rgba(map.get($theme-colors, danger), $alert-transparent);
   }
 }
 
 .alert-primary {
-  background: theme-color('primary');
+  background: map.get($theme-colors, primary);
   color: $white;
 
   &.alert-transparent {
-    color: theme-color('primary');
-    background: rgba(theme-color('primary'), $alert-transparent);
+    color: map.get($theme-colors, primary);
+    background: rgba(map.get($theme-colors, primary), $alert-transparent);
   }
 }
 
@@ -1338,7 +1341,7 @@ li.react-datepicker__time-list-item--selected {
     transition: all 0.3s ease;
     opacity: 1;
     background-color: rgba($black, 0.2);
-    border-radius: $border-radius/2;
+    border-radius: math.div($border-radius, 2);
   }
 }
 
@@ -1389,7 +1392,7 @@ li.react-datepicker__time-list-item--selected {
       flex-grow: 0;
     }
 
-    @media (min-width: (map-get($grid-breakpoints, sm))) {
+    @media (min-width: (map.get($grid-breakpoints, sm))) {
       width: $modal-slide-in-width;
     }
 
@@ -1397,14 +1400,14 @@ li.react-datepicker__time-list-item--selected {
       width: $modal-slide-in-width-sm;
     }
     &.sidebar-lg {
-      @media (min-width: (map-get($grid-breakpoints, sm))) {
+      @media (min-width: (map.get($grid-breakpoints, sm))) {
         width: $modal-slide-in-width-lg;
       }
     }
   }
 
   .close {
-    top: $modal-header-padding-y / 2;
+    top: math.div($modal-header-padding-y, 2);
     z-index: 10;
     transform: none;
     position: absolute;
@@ -1469,9 +1472,9 @@ li.react-datepicker__time-list-item--selected {
 
     &.inRange,
     &.inRange:hover {
-      background: lighten($color: $primary, $amount: 30%);
-      border-color: lighten($color: $primary, $amount: 30%);
-      box-shadow: -5px 0 0 lighten($color: $primary, $amount: 30%), 5px 0 0 lighten($color: $primary, $amount: 30%);
+      background: color.scale($primary, $lightness: 30%);
+      border-color: color.scale($primary, $lightness: 30%);
+      box-shadow: -5px 0 0 color.scale($primary, $lightness: 30%), 5px 0 0 color.scale($primary, $lightness: 30%);
     }
     &.startRange,
     &.endRange,

@@ -1,5 +1,16 @@
-@import "../../styles/helpers";
+@use '../../styles/helpers' as *;
+@use "sass:map";
 
+// Custom responsive mixin for easier project management (no Bootstrap dependency in modules)
+@mixin respond-down($breakpoint) {
+  @if $breakpoint == lg {
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  }
+  // Add more breakpoints as needed
+}
+//@use '../../styles/variables' as *;
 .avatar {
   display: flex;
   align-items: center;
@@ -7,7 +18,7 @@
   overflow: hidden;
   height: 60px;
   width: 60px;
-  background: $warning;
+  background: map.get($theme-colors, warning);
   font-weight: 600;
   font-size: 18px;
   img {
@@ -32,7 +43,7 @@
 
 .usersTableWrapper {
   overflow: hidden;
-  @include media-breakpoint-down(lg) {
+  @include respond-down(lg) {
     overflow: auto;
   }
 }

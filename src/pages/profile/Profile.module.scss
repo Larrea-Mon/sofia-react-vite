@@ -1,11 +1,12 @@
-@import "../../styles/helpers";
+@use "../../styles/helpers" as *;
 
 .profile {
   background: $violet;
   border-radius: $border-radius;
   height: 100%;
   color: $white;
-  * > {
+  // Fixed invalid selector: replaced `* >` with `> *` for valid Sass/CSS
+  > * {
     color: $white !important;
   }
 

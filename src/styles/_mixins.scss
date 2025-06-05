@@ -1,3 +1,12 @@
+// Project custom mixins
+@use 'sass:math';
+@use 'sass:color';
+
+// Add a simple transition mixin for use in modules (since Bootstrap's is not available)
+@mixin transition($args...) {
+  transition: #{ $args };
+}
+
 @mixin badge-inverse($bg) {
   color: $bg;
   background-color: $base-light-gray;
@@ -54,15 +63,16 @@
   border-color: $color;
 }
 
+
 @mixin bg-light($color) {
-  background: rgba($color, 0.12) !important;
+  background: rgba($color, math.div(12, 100)) !important;
   color: $color !important;
   border-color: transparent !important;
   // Calendar background, color and border color
   &.fc-h-event,
   &.fc-v-event {
     color: $color !important;
-    border-color: rgba($color, 0.1);
+    border-color: rgba($color, math.div(1, 10));
 
     .fc-event-main > .fc-event-main-frame > .fc-event-title-container {
       color: $color !important;
@@ -78,14 +88,13 @@
     color: $color !important;
   }
 
-
   .fc-list-event-dot {
     border-color: $color !important;
   }
 
   &.fc-list-event {
     &:hover td {
-      background: rgba($color, 0.1) !important;
+      background: rgba($color, math.div(1, 10)) !important;
     }
 
     .fc-list-event-title {

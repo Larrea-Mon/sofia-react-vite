@@ -1,4 +1,4 @@
-@import "../../styles/helpers";
+@use "../../styles/helpers" as *;
 :global .h-100 {
   height: 100%;
 }

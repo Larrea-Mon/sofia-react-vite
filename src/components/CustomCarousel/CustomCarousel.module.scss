@@ -1,4 +1,4 @@
-@import "../../styles/helpers";
+@use "../../styles/helpers" as *;
 
 .carouselTitle {
   padding: 24px;
@@ -7,7 +7,7 @@
 .img {
   height: 355px;
   display: block;
-  maxWidth: 400;
+  max-width: 400;
   overflow: hidden;
   width: 100%;
 }
