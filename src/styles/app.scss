@@ -1,3 +1,15 @@
+// FontAwesome 4.7.0 webfont local fallback (relative paths for Vite)
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/fontawesome-webfont.woff2') format('woff2'),
+       url('../fonts/fontawesome-webfont.woff') format('woff'),
+       url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+       url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /**
  * Customized version of bootstrap using variables from _variables.scss.
  * This file is loaded via separate loader thus allowing to use original bootstrap classes (e.g. .btn-default) through out the app.
