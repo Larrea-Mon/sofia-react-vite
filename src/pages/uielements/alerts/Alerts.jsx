@@ -4,7 +4,7 @@ import {
   Col,
 } from 'reactstrap';
 import Widget from '../../../components/Widget/Widget.jsx';
-import CustomAlert from "../../../components/CustomAlert/CustomAlert.js";
+import CustomAlert from "../../../components/CustomAlert/CustomAlert.jsx";
 import s from "./Alerts.module.scss";
 
 const alertTypes = ["info", "success", "warning", "error"];

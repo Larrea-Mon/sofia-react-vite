@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import cn from "classnames";
 import s from "./Sidebar.module.scss";
 import LinksGroup from "./LinksGroup/LinksGroup";
-import { changeActiveSidebarItem } from "../../actions/navigation.js";
+import { changeActiveSidebarItem } from "../../actions/navigation.jsx";
 import SofiaLogo from "../Icons/SofiaLogo.jsx";
 import "eva-icons/style/eva-icons.css";
 

@@ -16,8 +16,8 @@ import {
   Form,
   FormGroup,
 } from "reactstrap";
-import { logoutUser } from "../../actions/auth.js";
-import { closeSidebar, openSidebar } from "../../actions/navigation.js";
+import { logoutUser } from "../../actions/auth.jsx";
+import { closeSidebar, openSidebar } from "../../actions/navigation.jsx";
 import MenuIcon from "../Icons/HeaderIcons/MenuIcon.jsx";
 import SearchBarIcon from "../Icons/HeaderIcons/SearchBarIcon.jsx";
 import BellIcon from "../Icons/HeaderIcons/BellIcon.jsx";

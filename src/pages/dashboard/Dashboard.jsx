@@ -12,7 +12,7 @@ import {
   UncontrolledDropdown
 } from "reactstrap";
 import Widget from "../../components/Widget/Widget.jsx";
-import ApexActivityChart from "./components/ActivityChart.js";
+import ApexActivityChart from "./components/ActivityChart.jsx";
 
 import meal1 from "../../assets/dashboard/meal-1.svg";
 import meal2 from "../../assets/dashboard/meal-2.svg";

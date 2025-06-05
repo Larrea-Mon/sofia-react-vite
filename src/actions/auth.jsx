@@ -1,9 +1,9 @@
 import axios from "axios";
-import config from "../config";
+import config from "../config.js";
 import jwt from "jsonwebtoken";
 import { toast } from "react-toastify";
-import Errors from "../components/FormItems/error/errors";
-import { mockUser } from "./mock.js";
+import Errors from "../components/FormItems/error/errors.js";
+import { mockUser } from "./mock.jsx";
 
 export const AUTH_FAILURE = 'AUTH_FAILURE';
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';

@@ -5,11 +5,11 @@ import {
   Row,
 } from "reactstrap";
 import Widget from "../../../components/Widget/Widget.jsx";
-import ApexRadarChart from "./components/ApexRadarChart.js";
-import RechartsPieChart from "./components/RechartsPieChart.js";
-import ApexLineChart from "./components/ApexLineChart.js";
-import ApexColumnAreaChart from "./components/ApexColumnAreaChart.js";
-import ApexLineColumnChart from "./components/ApexLineColumnChart.js";
+import ApexRadarChart from "./components/ApexRadarChart.jsx";
+import RechartsPieChart from "./components/RechartsPieChart.jsx";
+import ApexLineChart from "./components/ApexLineChart.jsx";
+import ApexColumnAreaChart from "./components/ApexColumnAreaChart.jsx";
+import ApexLineColumnChart from "./components/ApexLineColumnChart.jsx";
 
 export default function Charts() {
   return (

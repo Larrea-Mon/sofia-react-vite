@@ -8,7 +8,7 @@ import ErrorPage from "./pages/error/ErrorPage.jsx";
 import LayoutComponent from "./components/Layout/Layout.jsx";
 import Login from "./pages/auth/login/Login.jsx";
 import Register from "./pages/auth/register/Register.jsx";
-import DocumentationLayout from "./documentation/DocumentationLayout.js";
+import DocumentationLayout from "./documentation/DocumentationLayout.jsx";
 
 import "./styles/app.scss";
 

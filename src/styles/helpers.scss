@@ -2,10 +2,13 @@
  * Customized version of bootstrap using variables from _variables.scss.
  * This file is loaded via separate loader thus allowing to use original bootstrap classes (e.g. .btn-default) through out the app.
  */
-@use "../../node_modules/bootstrap/scss/functions";
-@use "variables";
-@use "../../node_modules/bootstrap/scss/variables";
-@use "mixins";
-@use '../../node_modules/font-awesome/scss/font-awesome';
-@use '../../node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox';
-@use "../../node_modules/bootstrap/scss/mixins";
+
+
+
+
+// Bootstrap SCSS is not forwarded here to avoid Sass module conflicts.
+// If you need Bootstrap variables/mixins, import them in your global stylesheet (e.g., app.scss) using @import.
+// Only your own variables and mixins are forwarded for use in module stylesheets.
+
+@forward "variables";
+@forward "mixins";

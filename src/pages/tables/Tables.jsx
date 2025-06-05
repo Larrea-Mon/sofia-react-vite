@@ -16,7 +16,7 @@ import {
   Badge,
 } from "reactstrap";
 import Widget from "../../components/Widget/Widget.jsx";
-import TaskContainer from "./components/TaskContainer/TaskContainer.js";
+import TaskContainer from "./components/TaskContainer/TaskContainer.jsx";
 
 import cloudIcon from "../../assets/tables/cloudIcon.svg";
 import funnelIcon from "../../assets/tables/funnelIcon.svg";
@@ -26,7 +26,7 @@ import searchIcon from "../../assets/tables/searchIcon.svg";
 import moreIcon from "../../assets/tables/moreIcon.svg";
 
 import s from "./Tables.module.scss";
-import mock from "./mock.js";
+import mock from "./mock.jsx";
 
 const Tables = function () {
 

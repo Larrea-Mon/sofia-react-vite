@@ -2,7 +2,7 @@ import {
   OPEN_SIDEBAR,
   CLOSE_SIDEBAR,
   CHANGE_ACTIVE_SIDEBAR_ITEM,
-} from "../actions/navigation.js";
+} from "../actions/navigation.jsx";
 
 const initialState = {
   sidebarOpened: false,

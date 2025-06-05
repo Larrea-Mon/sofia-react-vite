@@ -21,7 +21,7 @@ import TwitterIcon from "../../../components/Icons/AuthIcons/TwitterIcon.jsx";
 import FacebookIcon from "../../../components/Icons/AuthIcons/FacebookIcon.jsx";
 import GithubIcon from "../../../components/Icons/AuthIcons/GithubIcon.jsx";
 import LinkedinIcon from "../../../components/Icons/AuthIcons/LinkedinIcon.jsx";
-import { registerUser } from "../../../actions/register.js";
+import { registerUser } from "../../../actions/register.jsx";
 
 const Register = (props) => {
   const [state, setState] = useState({ email: '', password: ''} )

@@ -3,9 +3,9 @@ import {
   Col,
   Row,
 } from "reactstrap";
-import CustomCarousel from "../../../components/CustomCarousel/CustomCarousel.js";
+import CustomCarousel from "../../../components/CustomCarousel/CustomCarousel.jsx";
 
-import mock from "./mock.js";
+import mock from "./mock.jsx";
 
 export default function Carousel() {
 

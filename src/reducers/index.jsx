@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import auth from "./auth.js";
-import navigation from "./navigation.js";
-// import register from "./register.js";
-import calendar from "./calendar.js";
-import users from "./usersReducers";
+import auth from "./auth.jsx";
+import navigation from "./navigation.jsx";
+// import register from "./register.jsx";
+import calendar from "./calendar.jsx";
+import users from "./usersReducers.jsx";
 //import { connectRouter } from "connected-react-router";
 
 const rootReducer = () =>
