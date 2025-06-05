@@ -50,6 +50,8 @@ import s from "./Layout.module.scss";
 
 const Layout = (props) => {
   const location = useLocation();
+  // Debug output to verify Layout is rendering and which route is active
+  console.log('[Layout] Rendered at', new Date().toISOString(), 'pathname:', location.pathname);
   return (
     <div className={s.root}>
       <div className={s.wrap}>

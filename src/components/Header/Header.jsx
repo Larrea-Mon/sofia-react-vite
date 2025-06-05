@@ -74,7 +74,7 @@ const Header = (props) => {
           <MenuIcon className={s.menuIcon} />
         </NavLink>
       </div>
-      <Form className="d-none d-sm-block" inline>
+      <Form className="d-none d-sm-block form-inline">
         <FormGroup>
           <InputGroup>
             <Input id="search-input" placeholder="Search Dashboard" className='focus no-border'/>
@@ -100,7 +100,7 @@ const Header = (props) => {
               <div className={s.count}></div>
             </div>
           </DropdownToggle>
-          <DropdownMenu right className="navbar-dropdown notifications-dropdown" style={{ width: "340px" }}>
+          <DropdownMenu end className="navbar-dropdown notifications-dropdown" style={{ width: "340px" }}>
             <DropdownItem><img src={basketIcon} alt="Basket Icon"/><span>12 new orders have arrived today</span></DropdownItem>
             <DropdownItem>
               <div>

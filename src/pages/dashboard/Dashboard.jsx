@@ -32,15 +32,36 @@ import s from "./Dashboard.module.scss";
 export default function Dashboard() {
   const [checkboxes, setCheckboxes] = useState([true, false])
 
+  // Debug output for dashboard render
+  console.log('[Dashboard] Rendered at', new Date().toISOString());
+  try {
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log('[Dashboard] localStorage user:', user);
+  } catch (e) {
+    console.warn('[Dashboard] Could not parse user from localStorage:', e);
+  }
+
   const toggleCheckbox = (id) => {
     setCheckboxes(checkboxes => checkboxes
       .map((checkbox, index) => index === id ? !checkbox : checkbox ))
   }
 
+  // Optionally, show debug info in the UI for quick feedback
+  const debugUser = (() => {
+    try {
+      return JSON.stringify(JSON.parse(localStorage.getItem('user')));
+    } catch {
+      return 'null';
+    }
+  })();
+
   const meals = [meal1, meal2, meal3];
 
   return (
     <div>
+      <div style={{background: '#eef', color: '#333', padding: '6px', fontSize: '13px', borderBottom: '1px solid #aac'}}>
+        [Dashboard Debug] localStorage user: {debugUser}
+      </div>
       <Row>
         <Col className="pr-grid-col" xs={12} lg={8}>
           <Row className="gutter mb-4">

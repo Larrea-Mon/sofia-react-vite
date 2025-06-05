@@ -1,7 +1,7 @@
 import React from 'react';
 import {createRoot} from "react-dom/client";
 //import { routerMiddleware } from "connected-react-router";
-import { createStore, applyMiddleware, compose } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
 import { Provider } from 'react-redux';
 // import * as serviceWorker from './serviceWorker';
@@ -17,8 +17,8 @@ import { createHashHistory } from "history";
 // ** Fake Database
 import './fakeDB';
 
-const history = createHashHistory();
 
+const history = createHashHistory();
 export function getHistory() {
   return history;
 }
@@ -30,14 +30,12 @@ if (token) {
   axios.defaults.headers.common['Authorization'] = "Bearer " + token;
 }
 
-export const store = createStore(
-  createRootReducer(history),
-  compose(
-    applyMiddleware(
-      thunk
-    )
-  )
-);
+
+export const store = configureStore({
+  reducer: createRootReducer(history),
+  devTools: true,
+});
+
 
 store.dispatch(doInit());
 

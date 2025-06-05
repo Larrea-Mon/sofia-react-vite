@@ -123,7 +123,7 @@ export default function Navbars() {
                       <MenuIcon/>
                     </NavbarToggler>
                     <div className="d-flex flex-row justify-content-between align-items-center w-100">
-                      <Form className="d-none d-sm-block" inline>
+                      <Form className="d-none d-sm-block form-inline">
                         <FormGroup>
                           <InputGroup>
                           <Input id="search-input" placeholder="Search Dashboard" className="focus no-border"/>

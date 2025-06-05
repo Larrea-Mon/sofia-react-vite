@@ -29,6 +29,7 @@
     "@makotot/ghostui": "^2.0.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
+    "@reduxjs/toolkit": "^2.8.2",
     "@uiw/react-md-editor": "^4.0.7",
     "@vis.gl/react-google-maps": "^1.5.2",
     "animate.css": "^4.1.1",
