@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import FileUploader from "../uploaders/UploadService";
+import FileUploader from "./UploadService";
 import Errors from "../error/errors";
 import ImagesUploaderWrapper from "../style/ImagesUploaderWrapper";
 

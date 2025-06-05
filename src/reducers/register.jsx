@@ -2,7 +2,7 @@ import {
   REGISTER_FAILURE,
   REGISTER_REQUEST,
   REGISTER_SUCCESS
-} from "../actions/register.js";
+} from "../actions/register.jsx";
 
 export default function register(state = {
   isFetching: false,
