@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { NavLink, useLocation } from "react-router-dom";
 import { Collapse, Badge } from "reactstrap";
-import { Route } from "react-router";
+// import { Route } from "react-router"; // REMOVE: not needed in react-router v6
 import classnames from "classnames";
 
 import s from "./LinksGroup.module.scss";
@@ -19,7 +19,7 @@ const LinksGroup = (props) => {
     deep = 0,
     activeItem = "",
     label = "",
-    exact = true,
+    // exact = true, // REMOVE: not needed in react-router v6
     ...restProps
   } = props;
 
@@ -45,8 +45,7 @@ const LinksGroup = (props) => {
         <li className={[s.headerLink, props.className].join(" ")}>
           <NavLink
             to={props.link}
-            activeClassName={s.headerLinkActive}
-            exact={exact}
+            className={({ isActive }) => isActive ? s.headerLinkActive : undefined}
             target={props.target}
           >
             <span className={s.icon}>{props.iconName}</span>
@@ -69,13 +68,12 @@ const LinksGroup = (props) => {
       <li>
         <NavLink
           to={props.link}
-          activeClassName={s.headerLinkActive}
+          className={({ isActive }) => isActive ? s.headerLinkActive : undefined}
           onClick={(e) => {
             if (props.link.includes("menu")) {
               e.preventDefault();
             }
           }}
-          exact={exact}
         >
           {<i className="fa fa-circle text-primary mr-2" />} {props.header}
         </NavLink>
@@ -84,48 +82,41 @@ const LinksGroup = (props) => {
   }
 
   return (
-    <Route
-      path={props.link}
-      children={(params) => {
-        return (
-          <li className={classnames({ [s.headerLink]: props.isHeader }, props.className)}>
-            <a
-              className={classnames("d-flex", { [s.collapsed]: isOpen })}
-              onClick={(e) => togglePanelCollapse(props.link, e)}
-              href="#top"
-            >
-              {props.isHeader ? (
-                <span className={s.icon}>{props.iconName}</span>
-              ) : null}
-              {props.header}{" "}
-              {props.label && (
-                <sup className={`text-${props.labelColor || "warning"} ml-1`}>
-                  {props.label}
-                </sup>
-              )}
-              <b className={["fa fa-angle-right", s.caret].join(" ")} />
-            </a>
-            <Collapse className={s.panel} isOpen={isOpen}>
-              <ul>
-                {props.childrenLinks &&
-                  props.childrenLinks.map((child, ind) => (
-                    <LinksGroup
-                      onActiveSidebarItemChange={props.onActiveSidebarItemChange}
-                      activeItem={props.activeItem}
-                      header={child.header}
-                      link={child.link}
-                      index={child.index}
-                      childrenLinks={child.childrenLinks}
-                      deep={props.deep + 1}
-                      key={ind}
-                    />
-                  ))}
-              </ul>
-            </Collapse>
-          </li>
-        );
-      }}
-    />
+    <li className={classnames({ [s.headerLink]: props.isHeader }, props.className)}>
+      <a
+        className={classnames("d-flex", { [s.collapsed]: isOpen })}
+        onClick={(e) => togglePanelCollapse(props.link, e)}
+        href="#top"
+      >
+        {props.isHeader ? (
+          <span className={s.icon}>{props.iconName}</span>
+        ) : null}
+        {props.header}{" "}
+        {props.label && (
+          <sup className={`text-${props.labelColor || "warning"} ml-1`}>
+            {props.label}
+          </sup>
+        )}
+        <b className={["fa fa-angle-right", s.caret].join(" ")} />
+      </a>
+      <Collapse className={s.panel} isOpen={isOpen}>
+        <ul>
+          {props.childrenLinks &&
+            props.childrenLinks.map((child, ind) => (
+              <LinksGroup
+                onActiveSidebarItemChange={props.onActiveSidebarItemChange}
+                activeItem={props.activeItem}
+                header={child.header}
+                link={child.link}
+                index={child.index}
+                childrenLinks={child.childrenLinks}
+                deep={props.deep + 1}
+                key={ind}
+              />
+            ))}
+        </ul>
+      </Collapse>
+    </li>
   );
 };
 
@@ -143,7 +134,7 @@ LinksGroup.propTypes = {
   deep: PropTypes.number,
   onActiveSidebarItemChange: PropTypes.func,
   labelColor: PropTypes.string,
-  exact: PropTypes.bool,
+  // exact: PropTypes.bool, // REMOVE: not needed in react-router v6
 };
 
 export default LinksGroup;

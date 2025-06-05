@@ -62,10 +62,9 @@ const Layout = (props) => {
           <Routes>
             <Route path="/template" element={<Navigate to="/template/dashboard" replace />} />
             <Route path="/template/dashboard" element={<Dashboard />} />
+            <Route path="/template/dashboard/" element={<Dashboard />} />
             <Route path="/template/user" element={<Navigate to="/template/user/profile" replace />} />
             <Route path="/template/user/profile" element={<Profile />} />
-            
-
             <Route path="/admin" element={<Navigate to="/admin/users" replace />} />
             <Route path="/admin/users" element={<UserListPage />} />
             <Route path="/admin/users/new" element={<UserFormPage />} />

@@ -54,7 +54,7 @@ const Sidebar = (props) => {
           iconName={<i className="eva eva-person-outline"/>}
           link="/admin"
           index="admin"
-          exact={false}
+          // exact={false} // REMOVE: not needed in react-router v6
           childrenLinks={[
             {
               header: 'My Profile', link: '/template/user/profile',

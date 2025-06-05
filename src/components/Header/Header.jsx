@@ -134,11 +134,10 @@ const Header = (props) => {
             </DropdownItem>
             <DropdownItem className={s.dropdownProfileItem}><TasksIcon/><span>Tasks</span></DropdownItem>
             <DropdownItem className={s.dropdownProfileItem}><MessagesIcon/><span>Messages</span></DropdownItem>
-            <NavItem>
-              <NavLink onClick={() => doLogout()} href="#">
-                <button className="btn btn-primary rounded-pill mx-auto logout-btn" type="submit"><img src={logoutIcon} alt="Logout"/><span className="ml-1">Logout</span></button>
-              </NavLink>
-            </NavItem>
+            <DropdownItem className={s.dropdownProfileItem} onClick={doLogout} style={{ cursor: 'pointer' }}>
+              <img src={logoutIcon} alt="Logout" style={{marginRight: '6px'}}/>
+              <span className="ml-1">Logout</span>
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </Nav>
