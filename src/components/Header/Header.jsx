@@ -18,10 +18,10 @@ import {
 } from "reactstrap";
 import { logoutUser } from "../../actions/auth.js";
 import { closeSidebar, openSidebar } from "../../actions/navigation.js";
-import MenuIcon from "../Icons/HeaderIcons/MenuIcon.js";
-import SearchBarIcon from "../Icons/HeaderIcons/SearchBarIcon.js";
-import BellIcon from "../Icons/HeaderIcons/BellIcon.js";
-import SearchIcon from "../Icons/HeaderIcons/SearchIcon.js";
+import MenuIcon from "../Icons/HeaderIcons/MenuIcon.jsx";
+import SearchBarIcon from "../Icons/HeaderIcons/SearchBarIcon.jsx";
+import BellIcon from "../Icons/HeaderIcons/BellIcon.jsx";
+import SearchIcon from "../Icons/HeaderIcons/SearchIcon.jsx";
 
 import ProfileIcon from "../../assets/navbarMenus/pfofileIcons/ProfileIcon.jsx";
 import MessagesIcon from "../../assets/navbarMenus/pfofileIcons/MessagesIcon.jsx";

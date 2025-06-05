@@ -5,10 +5,10 @@ import {
   Table,
   Button,
 } from "reactstrap";
-import Dot from '../../../components/Dot/Dot.js';
+import Dot from '../../../components/Dot/Dot.jsx';
 import Widget from '../../../components/Widget/Widget.jsx';
 
-import mock from './mock.js';
+import mock from './mock.jsx';
 import s from './Colors.module.scss';
 
 export default function Colors() {

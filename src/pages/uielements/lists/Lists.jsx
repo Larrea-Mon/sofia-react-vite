@@ -4,7 +4,7 @@ import {
   Col,
   Row
 } from "reactstrap";
-import Widget from "../../../components/Widget/Widget.js";
+import Widget from "../../../components/Widget/Widget.jsx";
 import s from "./Lists.module.scss";
 
 export default function Lists() {

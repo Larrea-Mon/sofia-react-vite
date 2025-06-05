@@ -18,8 +18,8 @@ import {
 } from 'reactstrap';
 import Widget from "../../../components/Widget/Widget.jsx";
 import MenuIcon from "../../../components/Icons/HeaderIcons/MenuIcon.jsx";
-import BellIcon from "../../../components/Icons/HeaderIcons/BellIcon.js";
-import SearchBarIcon from "../../../components/Icons/HeaderIcons/SearchBarIcon.js";
+import BellIcon from "../../../components/Icons/HeaderIcons/BellIcon.jsx";
+import SearchBarIcon from "../../../components/Icons/HeaderIcons/SearchBarIcon.jsx";
 import userImg from "../../../assets/user.svg";
 
 import s from "./Navbars.module.scss";

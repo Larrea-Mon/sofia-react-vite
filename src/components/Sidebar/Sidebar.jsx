@@ -6,7 +6,7 @@ import cn from "classnames";
 import s from "./Sidebar.module.scss";
 import LinksGroup from "./LinksGroup/LinksGroup";
 import { changeActiveSidebarItem } from "../../actions/navigation.js";
-import SofiaLogo from "../Icons/SofiaLogo.js";
+import SofiaLogo from "../Icons/SofiaLogo.jsx";
 import "eva-icons/style/eva-icons.css";
 
 const Sidebar = (props) => {
