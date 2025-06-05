@@ -1,4 +1,4 @@
-import mock from "../mock";
+import mock from "../axiosMockAdapter.js";
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
@@ -156,7 +156,9 @@ mock.onDelete('/apps/calendar/remove-event').reply( config => {
   let { id } = config
   // convert Id to Number
   const eventId = Number(id)
-  const eventIndex = data.events.findIndex(ev => ev.id = eventId)
-  data.events.splice(eventIndex, 1)
+  const eventIndex = data.events.findIndex(ev => ev.id === eventId)//editado por copilot
+  if (eventIndex !== -1) {
+    data.events.splice(eventIndex, 1)
+  }
   return [200]
 })

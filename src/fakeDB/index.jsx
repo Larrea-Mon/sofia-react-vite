@@ -1,4 +1,4 @@
-import mock from "./mock"
+import mock from "./axiosMockAdapter"
 
 import './apps/calendar'
 
