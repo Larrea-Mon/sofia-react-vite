@@ -3,7 +3,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepConnector from '@mui/material/StepConnector';
-import mock from "../mock";
+import mock from "../profileMockData.js";
 import { styled } from '@mui/material/styles';
 
 const stepsData = mock.timelineWidget.timelineData;

@@ -5,7 +5,7 @@ import {
 } from "reactstrap";
 import CustomCarousel from "../../../components/CustomCarousel/CustomCarousel.jsx";
 
-import mock from "./mock.jsx";
+import mock from "./carouselMockData.js";
 
 export default function Carousel() {
 

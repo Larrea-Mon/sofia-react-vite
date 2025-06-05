@@ -1,9 +1,9 @@
 import axios from "axios";
 import config from "../config.jsx";
-import jwt from "jsonwebtoken";
+import { decodeToken } from "react-jwt";
 import { toast } from "react-toastify";
 import Errors from "../components/FormItems/error/errors.jsx";
-import { mockUser } from "./mock.jsx";
+import { mockUser } from "./authMockData.js";
 
 export const AUTH_FAILURE = 'AUTH_FAILURE';
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
@@ -90,7 +90,7 @@ export function receiveToken(token, navigate) {
     let user;
 
     if (config.isBackend) {
-      user = jwt.decode(token)
+      user = decodeToken(token)
     } else {
       user = {
         email: config.auth.email,

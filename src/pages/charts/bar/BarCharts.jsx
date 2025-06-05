@@ -3,7 +3,7 @@ import classnames from "classnames";
 import HighchartsReact from "highcharts-react-official";
 import Widget from "../../../components/Widget/Widget";
 import s from "./BarCharts.module.scss";
-import chartsData from "./mock";
+import chartsData from "./barChartsMockData.js";
 import {
   Row,
   Col,

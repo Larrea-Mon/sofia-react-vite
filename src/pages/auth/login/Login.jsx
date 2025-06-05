@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import config from "../../../config";
 import { connect } from "react-redux";
 //import { push } from "connected-react-router";
-import jwt from "jsonwebtoken";
+import { decodeToken } from "react-jwt";
 import { loginUser, receiveToken, doInit } from "../../../actions/auth";
 import {
   Container,

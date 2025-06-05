@@ -1,7 +1,7 @@
 import Errors from "../components/FormItems/error/errors";
 import axios from "axios";
 import config from "../config";
-import { mockUser } from "./mock";
+import { mockUser } from "./authMockData";
 
 async function list() {
   const response = await axios.get('/users');

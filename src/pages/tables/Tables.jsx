@@ -26,7 +26,7 @@ import searchIcon from "../../assets/tables/searchIcon.svg";
 import moreIcon from "../../assets/tables/moreIcon.svg";
 
 import s from "./Tables.module.scss";
-import mock from "./mock.jsx";
+import mock from "./tableMockData.js";
 
 const Tables = function () {
 

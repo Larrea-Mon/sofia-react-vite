@@ -31,25 +31,18 @@ import {
 } from "recharts";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import highchartMore from "highcharts/highcharts-more";
-import treemap from "highcharts/modules/treemap";
-import heatmap from "highcharts/modules/heatmap";
-import dumbbell from "highcharts/modules/dumbbell";
-import sankey from "highcharts/modules/sankey";
-import exporting from "highcharts/modules/exporting";
-import eData from "highcharts/modules/export-data";
+import "highcharts/highcharts-more";
+import "highcharts/modules/treemap";
+import "highcharts/modules/heatmap";
+import "highcharts/modules/dumbbell";
+import "highcharts/modules/sankey";
+import "highcharts/modules/exporting";
+import "highcharts/modules/export-data";
 import ApexCharts from "react-apexcharts";
 import Widget from "../../../components/Widget/Widget";
 import s from "./OtherCharts.module.scss";
 import chartsData from "./mock";
 
-dumbbell(Highcharts);
-highchartMore(Highcharts);
-sankey(Highcharts);
-exporting(Highcharts);
-eData(Highcharts);
-treemap(Highcharts);
-heatmap(Highcharts);
 
 export default function OtherCharts() {
 

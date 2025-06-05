@@ -4,7 +4,7 @@ import Errors from "../components/FormItems/error/errors";
 import { doInit } from "./auth";
 import { toast } from "react-toastify";
 import config from "../config";
-import { mockUser } from "./mock";
+import { mockUser } from "./authMockData";
 
 const actions = {
   doNew: () => {

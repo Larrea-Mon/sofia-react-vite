@@ -8,7 +8,7 @@ import {
 import Dot from '../../../components/Dot/Dot.jsx';
 import Widget from '../../../components/Widget/Widget.jsx';
 
-import mock from './mock.jsx';
+import mock from './colorsMockData.js';
 import s from './Colors.module.scss';
 
 export default function Colors() {

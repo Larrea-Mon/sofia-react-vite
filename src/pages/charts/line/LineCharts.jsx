@@ -26,7 +26,7 @@ import HighchartsReact from "highcharts-react-official";
 
 import ApexCharts from "react-apexcharts";
 import Widget from "../../../components/Widget/Widget";
-import chartsData from "./mock";
+import chartsData from "./lineChartsMockData.js";
 import s from "./LineCharts.module.scss";
 
 export default function LineCharts() {

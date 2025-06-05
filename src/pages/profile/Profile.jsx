@@ -20,7 +20,7 @@ import profileImg from "../../assets/profile/profile.png";
 import heartRed from "../../assets/dashboard/heartRed.svg";
 import heartTeal from "../../assets/dashboard/heartTeal.svg";
 
-import mock from "./mock";
+import mock from "./profileMockData.js";
 import Avatar from "../../components/Avatar/Avatar";
 const { newsGroupData, avatarGroupData, apexLineChart } = mock;
 

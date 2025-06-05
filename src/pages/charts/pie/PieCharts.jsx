@@ -21,14 +21,12 @@ import {
 import ApexCharts from "react-apexcharts";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import HighchartMore from "highcharts/highcharts-more";
-import VariablePie from "highcharts/modules/variable-pie";
+import "highcharts/highcharts-more.js";
+import "highcharts/modules/variable-pie.js";
 import Widget from "../../../components/Widget/Widget";
 import chartsData from "./mock";
 import s from "./PieCharts.module.scss";
 
-HighchartMore(Highcharts);
-VariablePie(Highcharts);
 
 export default function BarCharts() {
 

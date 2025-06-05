@@ -3,7 +3,7 @@ import { Row, Col, Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import CustomCarousel from "../../../components/CustomCarousel/CustomCarousel";
-import mock from "../../../pages/uielements/carousel/mock";
+import mock from "../../../pages/uielements/carousel/carouselMockData.js";
 
 class Buttons extends Component {
     render() {
