@@ -1,33 +1,54 @@
+import lesson1 from '../../assets/profile/timeline/lesson1.svg';
+import lesson2 from '../../assets/profile/timeline/lesson2.svg';
+import lesson3 from '../../assets/profile/timeline/lesson3.svg';
+import lesson4 from '../../assets/profile/timeline/lesson4.svg';
+import lesson5 from '../../assets/profile/timeline/lesson5.svg';
+import lesson6 from '../../assets/profile/timeline/lesson6.svg';
+
+import bbcnewsLogo from '../../assets/profile/news/bbcnewsLogo.svg';
+import cnnLogo from '../../assets/profile/news/cnnLogo.svg';
+import euronewsLogo from '../../assets/profile/news/euronewsLogo.svg';
+import nbcLogo from '../../assets/profile/news/nbcLogo.svg';
+
+import AlishaSwan from '../../assets/profile/AlishaSwan.png';
+import JamesWood from '../../assets/profile/JamesWood.png';
+import LuisSuares from '../../assets/profile/LuisSuares.png';
+import SamanthaBird from '../../assets/profile/SamanthaBird.png';
+import TaraSmith from '../../assets/profile/TaraSmith.png';
+import BrandyMartins from '../../assets/profile/BrandyMartins.png';
+import EnzoMacaroni from '../../assets/profile/EnzoMacaroni.png';
+import JennyLim from '../../assets/profile/JennyLim.png';
+
 export default {
   timelineWidget: {
     timelineData: [
       {
-        img: require('../../assets/profile/timeline/lesson1.svg').default,
+        img: lesson1,
         title: "Lesson 1",
         label: "Self introduction"
       },
       {
-        img: require('../../assets/profile/timeline/lesson2.svg').default,
+        img: lesson2,
         title: "Lesson 2",
         label: "Dialog at school"
       },
       {
-        img: require('../../assets/profile/timeline/lesson3.svg').default,
+        img: lesson3,
         title: "Lesson 3",
         label: "Daily conversation"
       },
       {
-        img: require('../../assets/profile/timeline/lesson4.svg').default,
+        img: lesson4,
         title: "Lesson 4",
         label: "Listening"
       },
       {
-        img: require('../../assets/profile/timeline/lesson5.svg').default,
+        img: lesson5,
         title: "Quiz",
         label: "First week quiz"
       },
       {
-        img: require('../../assets/profile/timeline/lesson6.svg').default,
+        img: lesson6,
         title: "Assignment",
         label: "First week assignment"
       },
@@ -68,25 +89,25 @@ export default {
     {
       title:"BBC News",
       time:"15 min ago",
-      img: require('../../assets/profile/news/bbcnewsLogo.svg').default,
+      img: bbcnewsLogo,
       text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys typesetting industry.',
     },
     {
       title:"Euronews",
       time:"1 h ago",
-      img: require('../../assets/profile/news/cnnLogo.svg').default,
+      img: cnnLogo,
       text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys typesetting industry.',
     },
     {
       title:"CNN",
       time:"3 h ago",
-      img: require('../../assets/profile/news/euronewsLogo.svg').default,
+      img: euronewsLogo,
       text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys typesetting industry.',
     },
     {
       title:"NBC",
       time:"6 h ago",
-      img: require('../../assets/profile/news/nbcLogo.svg').default,
+      img: nbcLogo,
       text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys typesetting industry.',
     },
   ],
@@ -94,35 +115,35 @@ export default {
   avatarGroupData: [
     {
       title: 'Alisha Swan',
-      img: require('../../assets/profile/AlishaSwan.png').default,
+      img: AlishaSwan,
     },
     {
       title: 'James Wood',
-      img: require('../../assets/profile/JamesWood.png').default,
+      img: JamesWood,
     },
     {
       title: 'Luis Suares',
-      img: require('../../assets/profile/LuisSuares.png').default,
+      img: LuisSuares,
     },
     {
       title: 'Samantha Bird',
-      img: require('../../assets/profile/SamanthaBird.png').default,
+      img: SamanthaBird,
     },
     {
       title: 'Tara Smith',
-      img: require('../../assets/profile/TaraSmith.png').default,
+      img: TaraSmith,
     },
     {
       title: 'Brandy Martins',
-      img: require('../../assets/profile/BrandyMartins.png').default,
+      img: BrandyMartins,
     },
     {
       title: 'Enzo Macaroni',
-      img: require('../../assets/profile/EnzoMacaroni.png').default,
+      img: EnzoMacaroni,
     },
     {
       title: 'Jenny Lim',
-      img: require('../../assets/profile/JennyLim.png').default,
+      img: JennyLim,
     },
   ],
   apexLineChart: {
