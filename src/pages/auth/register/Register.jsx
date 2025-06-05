@@ -16,11 +16,11 @@ import Footer from "../../../components/Footer/Footer.jsx";
 import hasToken from "../../../services/authService";
 import loginImage from "../../../assets/registerImage.svg";
 import SofiaLogo from "../../../components/Icons/SofiaLogo.jsx";
-import GoogleIcon from "../../../components/Icons/AuthIcons/GoogleIcon.js";
-import TwitterIcon from "../../../components/Icons/AuthIcons/TwitterIcon.js";
-import FacebookIcon from "../../../components/Icons/AuthIcons/FacebookIcon.js";
-import GithubIcon from "../../../components/Icons/AuthIcons/GithubIcon.js";
-import LinkedinIcon from "../../../components/Icons/AuthIcons/LinkedinIcon.js";
+import GoogleIcon from "../../../components/Icons/AuthIcons/GoogleIcon.jsx";
+import TwitterIcon from "../../../components/Icons/AuthIcons/TwitterIcon.jsx";
+import FacebookIcon from "../../../components/Icons/AuthIcons/FacebookIcon.jsx";
+import GithubIcon from "../../../components/Icons/AuthIcons/GithubIcon.jsx";
+import LinkedinIcon from "../../../components/Icons/AuthIcons/LinkedinIcon.jsx";
 import { registerUser } from "../../../actions/register.js";
 
 const Register = (props) => {

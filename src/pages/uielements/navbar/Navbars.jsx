@@ -16,8 +16,8 @@ import {
   DropdownItem,
   UncontrolledDropdown,
 } from 'reactstrap';
-import Widget from "../../../components/Widget/Widget";
-import MenuIcon from "../../../components/Icons/HeaderIcons/MenuIcon";
+import Widget from "../../../components/Widget/Widget.jsx";
+import MenuIcon from "../../../components/Icons/HeaderIcons/MenuIcon.jsx";
 import BellIcon from "../../../components/Icons/HeaderIcons/BellIcon.js";
 import SearchBarIcon from "../../../components/Icons/HeaderIcons/SearchBarIcon.js";
 import userImg from "../../../assets/user.svg";
